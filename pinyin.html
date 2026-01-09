@@ -115,7 +115,7 @@
         }
 
         #snd_player {
-            position: fixed;
+            position: absolute;
             background-color: #fff;
             border: 1px solid #999;
             padding: 12px;
@@ -535,8 +535,12 @@
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
             
-            sndPlayer.style.top = (rect.top + scrollTop - 10) + 'px';
-            sndPlayer.style.left = (rect.right + scrollLeft + 15) + 'px';
+            // Calcular la posición vertical centrada con el elemento
+            const menuHeight = sndPlayer.offsetHeight || 200; // altura estimada del menú
+            const centerY = rect.top + scrollTop + (rect.height / 2) - (menuHeight / 2);
+            
+            sndPlayer.style.top = centerY + 'px';
+            sndPlayer.style.left = (rect.right + scrollLeft + 10) + 'px';
             sndPlayer.style.display = 'block';
 
             // Actualizar las etiquetas con los tonos
