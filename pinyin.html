@@ -77,6 +77,7 @@
             font-size: 12px;
             text-align: center;
             min-width: 24px;
+            background-color: #ff7070;
         }
 
         /* Encabezados de fila (tbody th) - EN NEGRITA */
@@ -88,6 +89,7 @@
             cursor: pointer;
             text-align: center;
             min-width: 18px;
+            background-color: #ffb570;
         }
 
         #pinyin tbody th:hover {
@@ -158,12 +160,17 @@
             background-color: #e8f4ff;
         }
 
-        td.highlight, tr.highlight td.val {
-            background-color: #e8f4ff;
+        td.highlight, tr.highlight td.val, tr.highlight td:not(.val), tr.highlight td:empty {
+            background-color: #FFD1D1;
         }
 
         tr.highlight th, th.highlight {
-            background-color: #e8f4ff;
+            background-color: #FFD8A8;
+        }
+
+        /* Color especial para la celda exacta bajo el cursor */
+        td.current-cell {
+            background-color: #FF5E00 !important;
         }
 
         #snd_player {
@@ -603,14 +610,14 @@
         const pinyinTable = document.getElementById('pinyin');
         
         pinyinTable.addEventListener('mouseover', function(e) {
-            const cell = e.target.closest('td.val');
+            const cell = e.target.closest('td');
             if (cell) {
                 const row = cell.parentElement;
                 const cellIndex = Array.from(row.children).indexOf(cell);
                 
                 row.classList.add('highlight');
                 
-                // Resaltar columna
+                // Resaltar columna (todas las celdas)
                 const rows = pinyinTable.querySelectorAll('tr');
                 rows.forEach(r => {
                     const cells = r.querySelectorAll('th, td');
@@ -618,14 +625,20 @@
                         cells[cellIndex].classList.add('highlight');
                     }
                 });
+                
+                // Agregar clase especial a la celda actual
+                cell.classList.add('current-cell');
             }
         });
 
         pinyinTable.addEventListener('mouseout', function(e) {
-            const cell = e.target.closest('td.val');
+            const cell = e.target.closest('td');
             if (cell) {
                 pinyinTable.querySelectorAll('.highlight').forEach(el => {
                     el.classList.remove('highlight');
+                });
+                pinyinTable.querySelectorAll('.current-cell').forEach(el => {
+                    el.classList.remove('current-cell');
                 });
             }
         });
