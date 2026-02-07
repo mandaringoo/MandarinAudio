@@ -59,7 +59,8 @@
             padding: 0;
         }
 
-        #pinyin {
+        /* Estilos para la tabla tablepress */
+        .tablepress {
             border-collapse: collapse;
             font-size: 12px;
             width: auto;
@@ -68,107 +69,70 @@
             margin: 0 auto;
         }
 
-        /* Encabezados de columna (thead) - EN NEGRITA */
-        #pinyin thead th {
-            background-color: #fff;
+        .tablepress thead th {
+            background-color: #ff7070;
             border: 1px solid #000;
             font-weight: bold;
             padding: 1px;
             font-size: 12px;
             text-align: center;
             min-width: 24px;
-            background-color: #ff7070;
         }
 
-        /* Encabezados de fila (tbody th) - EN NEGRITA */
-        #pinyin tbody th {
-            background-color: #fff;
-            border: 1px solid #000;
-            font-weight: bold;
-            padding: 1px 3px;
-            cursor: pointer;
-            text-align: center;
-            min-width: 18px;
-            background-color: #ffb570;
-        }
-
-        #pinyin tbody th:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Celdas normales - con bordes laterales siempre */
-        #pinyin td {
+        .tablepress tbody td {
             border-left: 1px solid #000;
             border-right: 1px solid #000;
             padding: 1px;
             text-align: center;
             min-width: 24px;
             font-weight: normal;
-        }
-
-        /* Celdas vacías - quitar bordes superior e inferior */
-        #pinyin td:empty {
-            border-top: none;
-            border-bottom: none;
-        }
-
-        /* Celdas sin clase val - quitar bordes superior e inferior */
-        #pinyin td:not(.val) {
-            border-top: none;
-            border-bottom: none;
-        }
-
-        /* Bordes superiores gruesos para filas específicas */
-        #pinyin tbody tr:nth-child(2) th,
-        #pinyin tbody tr:nth-child(2) td {
-            border-top: 1px solid #000;
-        }
-
-        #pinyin tbody tr:nth-child(6) th,
-        #pinyin tbody tr:nth-child(6) td {
-            border-top: 1px solid #000;
-        }
-
-        #pinyin tbody tr:nth-child(10) th,
-        #pinyin tbody tr:nth-child(10) td {
-            border-top: 1px solid #000;
-        }
-
-        #pinyin tbody tr:nth-child(13) th,
-        #pinyin tbody tr:nth-child(13) td {
-            border-top: 1px solid #000;
-        }
-
-        #pinyin tbody tr:nth-child(16) th,
-        #pinyin tbody tr:nth-child(16) td {
-            border-top: 1px solid #000;
-        }
-
-        #pinyin tbody tr:nth-child(20) th,
-        #pinyin tbody tr:nth-child(20) td {
-            border-top: 1px solid #000;
-        }
-
-        td.val {
             cursor: pointer;
             background-color: white;
             transition: background-color 0.1s;
-            font-weight: normal;
         }
 
-        td.val:hover {
+        .tablepress tbody td:first-child {
+            background-color: #ffb570;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .tablepress tbody td:empty {
+            border-top: none;
+            border-bottom: none;
+            cursor: default;
+        }
+
+        .tablepress tbody td:hover:not(:empty):not(:first-child) {
             background-color: #e8f4ff;
         }
 
-        td.highlight, tr.highlight td.val, tr.highlight td:not(.val), tr.highlight td:empty {
+        .tablepress tbody td:first-child:hover {
+            background-color: #f0f0f0;
+        }
+
+        .tablepress tbody tr.row-2 td,
+        .tablepress tbody tr.row-3 td {
+            border-top: 1px solid #000;
+        }
+
+        .tablepress tbody tr.row-7 td,
+        .tablepress tbody tr.row-11 td,
+        .tablepress tbody tr.row-14 td,
+        .tablepress tbody tr.row-18 td,
+        .tablepress tbody tr.row-21 td,
+        .tablepress tbody tr.row-24 td {
+            border-top: 1px solid #000;
+        }
+
+        tr.highlight td {
             background-color: #FFD1D1;
         }
 
-        tr.highlight th, th.highlight {
+        tr.highlight td:first-child {
             background-color: #FFD8A8;
         }
 
-        /* Color especial para la celda exacta bajo el cursor */
         td.current-cell {
             background-color: #FF5E00 !important;
         }
@@ -241,265 +205,90 @@
         </div>
 
         <div id="chart-container">
-            <table id="pinyin">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>a</th><th>o</th><th>e</th><th>i</th><th>i</th><th>er</th>
-                        <th>ai</th><th>ei</th><th>ao</th><th>ou</th><th>an</th><th>en</th>
-                        <th>ang</th><th>eng</th><th>ong</th>
-                        <th>i</th><th>ia</th><th>iao</th><th>ie</th><th>iu</th><th>ian</th>
-                        <th>in</th><th>iang</th><th>ing</th><th>iong</th>
-                        <th>u</th><th>ua</th><th>uo</th><th>uai</th><th>ui</th><th>uan</th>
-                        <th>un</th><th>uang</th><th>ueng</th>
-                        <th>ü</th><th>üe</th><th>üan</th><th>ün</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th> </th>
-                        <td class="val">a</td><td class="val">o</td><td class="val">e</td><td></td><td></td><td class="val">er</td>
-                        <td class="val">ai</td><td></td><td class="val">ao</td><td class="val">ou</td><td class="val">an</td><td class="val">en</td>
-                        <td class="val">ang</td><td class="val">eng</td><td></td>
-                        <td class="val">yi</td><td class="val">ya</td><td class="val">yao</td><td class="val">ye</td><td class="val">you</td><td class="val">yan</td>
-                        <td class="val">yin</td><td class="val">yang</td><td class="val">ying</td><td class="val">yong</td>
-                        <td class="val">wu</td><td class="val">wa</td><td class="val">wo</td><td class="val">wai</td><td class="val">wei</td><td class="val">wan</td>
-                        <td class="val">wen</td><td class="val">wang</td><td class="val">weng</td>
-                        <td class="val">yu</td><td class="val">yue</td><td class="val">yuan</td><td class="val">yun</td>
-                    </tr>
-                    <tr>
-                        <th>b</th>
-                        <td class="val">ba</td><td class="val">bo</td><td></td><td></td><td></td><td></td>
-                        <td class="val">bai</td><td class="val">bei</td><td class="val">bao</td><td></td><td class="val">ban</td><td class="val">ben</td>
-                        <td class="val">bang</td><td class="val">beng</td><td></td>
-                        <td class="val">bi</td><td></td><td class="val">biao</td><td class="val">bie</td><td></td><td class="val">bian</td>
-                        <td class="val">bin</td><td></td><td class="val">bing</td><td></td>
-                        <td class="val">bu</td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>p</th>
-                        <td class="val">pa</td><td class="val">po</td><td></td><td></td><td></td><td></td>
-                        <td class="val">pai</td><td class="val">pei</td><td class="val">pao</td><td class="val">pou</td><td class="val">pan</td><td class="val">pen</td>
-                        <td class="val">pang</td><td class="val">peng</td><td></td>
-                        <td class="val">pi</td><td></td><td class="val">piao</td><td class="val">pie</td><td></td><td class="val">pian</td>
-                        <td class="val">pin</td><td></td><td class="val">ping</td><td></td>
-                        <td class="val">pu</td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>m</th>
-                        <td class="val">ma</td><td class="val">mo</td><td class="val">me</td><td></td><td></td><td></td>
-                        <td class="val">mai</td><td class="val">mei</td><td class="val">mao</td><td class="val">mou</td><td class="val">man</td><td class="val">men</td>
-                        <td class="val">mang</td><td class="val">meng</td><td></td>
-                        <td class="val">mi</td><td></td><td class="val">miao</td><td class="val">mie</td><td class="val">miu</td><td class="val">mian</td>
-                        <td class="val">min</td><td></td><td class="val">ming</td><td></td>
-                        <td class="val">mu</td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>f</th>
-                        <td class="val">fa</td><td class="val">fo</td><td></td><td></td><td></td><td></td>
-                        <td></td><td class="val">fei</td><td></td><td class="val">fou</td><td class="val">fan</td><td class="val">fen</td>
-                        <td class="val">fang</td><td class="val">feng</td><td></td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                        <td class="val">fu</td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>d</th>
-                        <td class="val">da</td><td></td><td class="val">de</td><td></td><td></td><td></td>
-                        <td class="val">dai</td><td class="val">dei</td><td class="val">dao</td><td class="val">dou</td><td class="val">dan</td><td class="val">den</td>
-                        <td class="val">dang</td><td class="val">deng</td><td class="val">dong</td>
-                        <td class="val">di</td><td></td><td class="val">diao</td><td class="val">die</td><td class="val">diu</td><td class="val">dian</td>
-                        <td></td><td></td><td class="val">ding</td><td></td>
-                        <td class="val">du</td><td></td><td class="val">duo</td><td></td><td class="val">dui</td><td class="val">duan</td>
-                        <td class="val">dun</td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>t</th>
-                        <td class="val">ta</td><td></td><td class="val">te</td><td></td><td></td><td></td>
-                        <td class="val">tai</td><td class="val">tei</td><td class="val">tao</td><td class="val">tou</td><td class="val">tan</td><td></td>
-                        <td class="val">tang</td><td class="val">teng</td><td class="val">tong</td>
-                        <td class="val">ti</td><td></td><td class="val">tiao</td><td class="val">tie</td><td></td><td class="val">tian</td>
-                        <td></td><td></td><td class="val">ting</td><td></td>
-                        <td class="val">tu</td><td></td><td class="val">tuo</td><td></td><td class="val">tui</td><td class="val">tuan</td>
-                        <td class="val">tun</td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>n</th>
-                        <td class="val">na</td><td></td><td class="val">ne</td><td></td><td></td><td></td>
-                        <td class="val">nai</td><td class="val">nei</td><td class="val">nao</td><td class="val">nou</td><td class="val">nan</td><td class="val">nen</td>
-                        <td class="val">nang</td><td class="val">neng</td><td class="val">nong</td>
-                        <td class="val">ni</td><td></td><td class="val">niao</td><td class="val">nie</td><td class="val">niu</td><td class="val">nian</td>
-                        <td class="val">nin</td><td class="val">niang</td><td class="val">ning</td><td></td>
-                        <td class="val">nu</td><td></td><td class="val">nuo</td><td></td><td></td><td class="val">nuan</td>
-                        <td></td><td></td><td></td>
-                        <td class="val">nü</td><td class="val">nüe</td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>l</th>
-                        <td class="val">la</td><td></td><td class="val">le</td><td></td><td></td><td></td>
-                        <td class="val">lai</td><td class="val">lei</td><td class="val">lao</td><td class="val">lou</td><td class="val">lan</td><td></td>
-                        <td class="val">lang</td><td class="val">leng</td><td class="val">long</td>
-                        <td class="val">li</td><td class="val">lia</td><td class="val">liao</td><td class="val">lie</td><td class="val">liu</td><td class="val">lian</td>
-                        <td class="val">lin</td><td class="val">liang</td><td class="val">ling</td><td></td>
-                        <td class="val">lu</td><td></td><td class="val">luo</td><td></td><td></td><td class="val">luan</td>
-                        <td class="val">lun</td><td></td><td></td>
-                        <td class="val">lü</td><td class="val">lüe</td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>g</th>
-                        <td class="val">ga</td><td></td><td class="val">ge</td><td></td><td></td><td></td>
-                        <td class="val">gai</td><td class="val">gei</td><td class="val">gao</td><td class="val">gou</td><td class="val">gan</td><td class="val">gen</td>
-                        <td class="val">gang</td><td class="val">geng</td><td class="val">gong</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                        <td class="val">gu</td><td class="val">gua</td><td class="val">guo</td><td class="val">guai</td><td class="val">gui</td><td class="val">guan</td>
-                        <td class="val">gun</td><td class="val">guang</td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>k</th>
-                        <td class="val">ka</td><td></td><td class="val">ke</td><td></td><td></td><td></td>
-                        <td class="val">kai</td><td class="val">kei</td><td class="val">kao</td><td class="val">kou</td><td class="val">kan</td><td class="val">ken</td>
-                        <td class="val">kang</td><td class="val">keng</td><td class="val">kong</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                        <td class="val">ku</td><td class="val">kua</td><td class="val">kuo</td><td class="val">kuai</td><td class="val">kui</td><td class="val">kuan</td>
-                        <td class="val">kun</td><td class="val">kuang</td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>h</th>
-                        <td class="val">ha</td><td></td><td class="val">he</td><td></td><td></td><td></td>
-                        <td class="val">hai</td><td class="val">hei</td><td class="val">hao</td><td class="val">hou</td><td class="val">han</td><td class="val">hen</td>
-                        <td class="val">hang</td><td class="val">heng</td><td class="val">hong</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                        <td class="val">hu</td><td class="val">hua</td><td class="val">huo</td><td class="val">huai</td><td class="val">hui</td><td class="val">huan</td>
-                        <td class="val">hun</td><td class="val">huang</td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>z</th>
-                        <td class="val">za</td><td></td><td class="val">ze</td><td class="val">zi</td><td></td><td></td>
-                        <td class="val">zai</td><td class="val">zei</td><td class="val">zao</td><td class="val">zou</td><td class="val">zan</td><td class="val">zen</td>
-                        <td class="val">zang</td><td class="val">zeng</td><td class="val">zong</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                        <td class="val">zu</td><td></td><td class="val">zuo</td><td></td><td class="val">zui</td><td class="val">zuan</td>
-                        <td class="val">zun</td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>c</th>
-                        <td class="val">ca</td><td></td><td class="val">ce</td><td class="val">ci</td><td></td><td></td>
-                        <td class="val">cai</td><td></td><td class="val">cao</td><td class="val">cou</td><td class="val">can</td><td class="val">cen</td>
-                        <td class="val">cang</td><td class="val">ceng</td><td class="val">cong</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                        <td class="val">cu</td><td></td><td class="val">cuo</td><td></td><td class="val">cui</td><td class="val">cuan</td>
-                        <td class="val">cun</td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>s</th>
-                        <td class="val">sa</td><td></td><td class="val">se</td><td class="val">si</td><td></td><td></td>
-                        <td class="val">sai</td><td></td><td class="val">sao</td><td class="val">sou</td><td class="val">san</td><td class="val">sen</td>
-                        <td class="val">sang</td><td class="val">seng</td><td class="val">song</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                        <td class="val">su</td><td></td><td class="val">suo</td><td></td><td class="val">sui</td><td class="val">suan</td>
-                        <td class="val">sun</td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>zh</th>
-                        <td class="val">zha</td><td></td><td class="val">zhe</td><td></td><td class="val">zhi</td><td></td>
-                        <td class="val">zhai</td><td class="val">zhei</td><td class="val">zhao</td><td class="val">zhou</td><td class="val">zhan</td><td class="val">zhen</td>
-                        <td class="val">zhang</td><td class="val">zheng</td><td class="val">zhong</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                        <td class="val">zhu</td><td class="val">zhua</td><td class="val">zhuo</td><td class="val">zhuai</td><td class="val">zhui</td><td class="val">zhuan</td>
-                        <td class="val">zhun</td><td class="val">zhuang</td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>ch</th>
-                        <td class="val">cha</td><td></td><td class="val">che</td><td></td><td class="val">chi</td><td></td>
-                        <td class="val">chai</td><td></td><td class="val">chao</td><td class="val">chou</td><td class="val">chan</td><td class="val">chen</td>
-                        <td class="val">chang</td><td class="val">cheng</td><td class="val">chong</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                        <td class="val">chu</td><td class="val">chua</td><td class="val">chuo</td><td class="val">chuai</td><td class="val">chui</td><td class="val">chuan</td>
-                        <td class="val">chun</td><td class="val">chuang</td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>sh</th>
-                        <td class="val">sha</td><td></td><td class="val">she</td><td></td><td class="val">shi</td><td></td>
-                        <td class="val">shai</td><td class="val">shei</td><td class="val">shao</td><td class="val">shou</td><td class="val">shan</td><td class="val">shen</td>
-                        <td class="val">shang</td><td class="val">sheng</td><td></td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                        <td class="val">shu</td><td class="val">shua</td><td class="val">shuo</td><td class="val">shuai</td><td class="val">shui</td><td class="val">shuan</td>
-                        <td class="val">shun</td><td class="val">shuang</td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>r</th>
-                        <td></td><td></td><td class="val">re</td><td></td><td class="val">ri</td><td></td>
-                        <td></td><td></td><td class="val">rao</td><td class="val">rou</td><td class="val">ran</td><td class="val">ren</td>
-                        <td class="val">rang</td><td class="val">reng</td><td class="val">rong</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                        <td class="val">ru</td><td class="val">rua</td><td class="val">ruo</td><td></td><td class="val">rui</td><td class="val">ruan</td>
-                        <td class="val">run</td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td>
-                    </tr>
-                    <tr>
-                        <th>j</th>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td>
-                        <td class="val">ji</td><td class="val">jia</td><td class="val">jiao</td><td class="val">jie</td><td class="val">jiu</td><td class="val">jian</td>
-                        <td class="val">jin</td><td class="val">jiang</td><td class="val">jing</td><td class="val">jiong</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td>
-                        <td class="val">ju</td><td class="val">jue</td><td class="val">juan</td><td class="val">jun</td>
-                    </tr>
-                    <tr>
-                        <th>q</th>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td>
-                        <td class="val">qi</td><td class="val">qia</td><td class="val">qiao</td><td class="val">qie</td><td class="val">qiu</td><td class="val">qian</td>
-                        <td class="val">qin</td><td class="val">qiang</td><td class="val">qing</td><td class="val">qiong</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td>
-                        <td class="val">qu</td><td class="val">que</td><td class="val">quan</td><td class="val">qun</td>
-                    </tr>
-                    <tr>
-                        <th>x</th>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td>
-                        <td class="val">xi</td><td class="val">xia</td><td class="val">xiao</td><td class="val">xie</td><td class="val">xiu</td><td class="val">xian</td>
-                        <td class="val">xin</td><td class="val">xiang</td><td class="val">xing</td><td class="val">xiong</td>
-                        <td></td><td></td><td></td><td></td><td></td><td></td>
-                        <td></td><td></td><td></td>
-                        <td class="val">xu</td><td class="val">xue</td><td class="val">xuan</td><td class="val">xun</td>
-                    </tr>
-                </tbody>
-            </table>
+            <table id="tablepress-148" class="notranslate tablepress tablepress-id-148 tablepress-responsive">
+<thead>
+<tr class="row-1">
+	<th class="column-1"></th><th colspan="5" class="column-2">A</th><th colspan="3" class="column-7">O</th><th colspan="5" class="column-10">E</th><th colspan="10" class="column-15">I</th><th colspan="8" class="column-25">U</th><th colspan="4" class="column-33">Ü</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-2">
+	<td class="column-1"></td><td class="column-2"><b>a</b></td><td class="column-3"><b>ai</b></td><td class="column-4"><b>ao</b></td><td class="column-5"><b>an</b></td><td class="column-6"><b>ang</b></td><td class="column-7"><b>o</b></td><td class="column-8"><b>ong</b></td><td class="column-9"><b>ou</b></td><td class="column-10"><b>e</b></td><td class="column-11"><b>ei</b></td><td class="column-12"><b>en</b></td><td class="column-13"><b>eng</b></td><td class="column-14"><b>er</b></td><td class="column-15"><b>i</b></td><td class="column-16"><b>ia</b></td><td class="column-17"><b>iao</b></td><td class="column-18"><b>ie</b></td><td class="column-19"><b>iu</b></td><td class="column-20"><b>ian</b></td><td class="column-21"><b>iang</b></td><td class="column-22"><b>in</b></td><td class="column-23"><b>ing</b></td><td class="column-24"><b>iong</b></td><td class="column-25"><b>u</b></td><td class="column-26"><b>ua</b></td><td class="column-27"><b>uo</b></td><td class="column-28"><b>ui</b></td><td class="column-29"><b>uai</b></td><td class="column-30"><b>uan</b></td><td class="column-31"><b>un</b></td><td class="column-32"><b>uang</b></td><td class="column-33"><b>ü</b></td><td class="column-34"><b>üe</b></td><td class="column-35"><b>üan</b></td><td class="column-36"><b>ün</b></td>
+</tr>
+<tr class="row-3">
+	<td class="column-1"><b>b</b></td><td class="column-2">ba</td><td class="column-3">bai</td><td class="column-4">bao</td><td class="column-5">ban</td><td class="column-6">bang</td><td class="column-7">bo</td><td class="column-8"></td><td class="column-9"></td><td class="column-10"></td><td class="column-11">bei</td><td class="column-12">ben</td><td class="column-13">beng</td><td class="column-14"></td><td class="column-15">bi</td><td class="column-16"></td><td class="column-17">biao</td><td class="column-18">bie</td><td class="column-19"></td><td class="column-20">bian</td><td class="column-21"></td><td class="column-22">bin</td><td class="column-23">bing</td><td class="column-24"></td><td class="column-25">bu</td><td class="column-26"></td><td class="column-27"></td><td class="column-28"></td><td class="column-29"></td><td class="column-30"></td><td class="column-31"></td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-4">
+	<td class="column-1"><b>p</b></td><td class="column-2">pa</td><td class="column-3">pai</td><td class="column-4">pao</td><td class="column-5">pan</td><td class="column-6">pang</td><td class="column-7">po</td><td class="column-8"></td><td class="column-9">pou</td><td class="column-10"></td><td class="column-11">pei</td><td class="column-12">pen</td><td class="column-13">peng</td><td class="column-14"></td><td class="column-15">pi</td><td class="column-16"></td><td class="column-17">piao</td><td class="column-18">pie</td><td class="column-19"></td><td class="column-20">pian</td><td class="column-21"></td><td class="column-22">pin</td><td class="column-23">ping</td><td class="column-24"></td><td class="column-25">pu</td><td class="column-26"></td><td class="column-27"></td><td class="column-28"></td><td class="column-29"></td><td class="column-30"></td><td class="column-31"></td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-5">
+	<td class="column-1"><b>m</b></td><td class="column-2">ma</td><td class="column-3">mai</td><td class="column-4">mao</td><td class="column-5">man</td><td class="column-6">mang</td><td class="column-7">mo</td><td class="column-8"></td><td class="column-9">mou</td><td class="column-10"></td><td class="column-11">mei</td><td class="column-12">men</td><td class="column-13">meng</td><td class="column-14"></td><td class="column-15">mi</td><td class="column-16"></td><td class="column-17">miao</td><td class="column-18">mie</td><td class="column-19">miu</td><td class="column-20">mian</td><td class="column-21"></td><td class="column-22">min</td><td class="column-23">ming</td><td class="column-24"></td><td class="column-25">mu</td><td class="column-26"></td><td class="column-27"></td><td class="column-28"></td><td class="column-29"></td><td class="column-30"></td><td class="column-31"></td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-6">
+	<td class="column-1"><b>f</b></td><td class="column-2">fa</td><td class="column-3"></td><td class="column-4"></td><td class="column-5">fan</td><td class="column-6">fang</td><td class="column-7">fo</td><td class="column-8"></td><td class="column-9">fou</td><td class="column-10"></td><td class="column-11">fei</td><td class="column-12">fen</td><td class="column-13">feng</td><td class="column-14"></td><td class="column-15"></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">fu</td><td class="column-26"></td><td class="column-27"></td><td class="column-28"></td><td class="column-29"></td><td class="column-30"></td><td class="column-31"></td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-7">
+	<td class="column-1"><b>d</b></td><td class="column-2">da</td><td class="column-3">dai</td><td class="column-4">dao</td><td class="column-5">dan</td><td class="column-6">dang</td><td class="column-7"></td><td class="column-8">dong</td><td class="column-9">dou</td><td class="column-10">de</td><td class="column-11">dei</td><td class="column-12"></td><td class="column-13">deng</td><td class="column-14"></td><td class="column-15">di</td><td class="column-16"></td><td class="column-17">diao</td><td class="column-18">die</td><td class="column-19">diu</td><td class="column-20">dian</td><td class="column-21"></td><td class="column-22"></td><td class="column-23">ding</td><td class="column-24"></td><td class="column-25">du</td><td class="column-26"></td><td class="column-27">duo</td><td class="column-28">dui</td><td class="column-29"></td><td class="column-30">duan</td><td class="column-31">dun</td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-8">
+	<td class="column-1"><b>t</b></td><td class="column-2">ta</td><td class="column-3">tai</td><td class="column-4">tao</td><td class="column-5">tan</td><td class="column-6">tang</td><td class="column-7"></td><td class="column-8">tong</td><td class="column-9">tou</td><td class="column-10">te</td><td class="column-11"></td><td class="column-12"></td><td class="column-13">teng</td><td class="column-14"></td><td class="column-15">ti</td><td class="column-16"></td><td class="column-17">tiao</td><td class="column-18">tie</td><td class="column-19"></td><td class="column-20">tian</td><td class="column-21"></td><td class="column-22"></td><td class="column-23">ting</td><td class="column-24"></td><td class="column-25">tu</td><td class="column-26"></td><td class="column-27">tuo</td><td class="column-28">tui</td><td class="column-29"></td><td class="column-30">tuan</td><td class="column-31">tun</td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-9">
+	<td class="column-1"><b>n</b></td><td class="column-2">na</td><td class="column-3">nai</td><td class="column-4">nao</td><td class="column-5">nan</td><td class="column-6">nang</td><td class="column-7"></td><td class="column-8">nong</td><td class="column-9">nou</td><td class="column-10">ne</td><td class="column-11">nei</td><td class="column-12">nen</td><td class="column-13">neng</td><td class="column-14"></td><td class="column-15">ni</td><td class="column-16"></td><td class="column-17">niao</td><td class="column-18">nie</td><td class="column-19">niu</td><td class="column-20">nian</td><td class="column-21">niang</td><td class="column-22">nin</td><td class="column-23">ning</td><td class="column-24"></td><td class="column-25">nu</td><td class="column-26"></td><td class="column-27">nuo</td><td class="column-28"></td><td class="column-29"></td><td class="column-30">nuan</td><td class="column-31"></td><td class="column-32"></td><td class="column-33">nü</td><td class="column-34">nüe</td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-10">
+	<td class="column-1"><b>l</b></td><td class="column-2">la</td><td class="column-3">lai</td><td class="column-4">lao</td><td class="column-5">lan</td><td class="column-6">lang</td><td class="column-7"></td><td class="column-8">long</td><td class="column-9">lou</td><td class="column-10">le</td><td class="column-11">lei</td><td class="column-12"></td><td class="column-13">leng</td><td class="column-14"></td><td class="column-15">li</td><td class="column-16">lia</td><td class="column-17">liao</td><td class="column-18">lie</td><td class="column-19">liu</td><td class="column-20">lian</td><td class="column-21">liang</td><td class="column-22">lin</td><td class="column-23">ling</td><td class="column-24"></td><td class="column-25">lu</td><td class="column-26"></td><td class="column-27">luo</td><td class="column-28"></td><td class="column-29"></td><td class="column-30">luan</td><td class="column-31">lun</td><td class="column-32"></td><td class="column-33">lü</td><td class="column-34">lüe</td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-11">
+	<td class="column-1"><b>z</b></td><td class="column-2">za</td><td class="column-3">zai</td><td class="column-4">zao</td><td class="column-5">zan</td><td class="column-6">zang</td><td class="column-7"></td><td class="column-8">zong</td><td class="column-9">zou</td><td class="column-10">ze</td><td class="column-11">zei</td><td class="column-12">zen</td><td class="column-13">zeng</td><td class="column-14"></td><td class="column-15"><b>zi</b></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">zu</td><td class="column-26"></td><td class="column-27">zuo</td><td class="column-28">zui</td><td class="column-29"></td><td class="column-30">zuan</td><td class="column-31">zun</td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-12">
+	<td class="column-1"><b>c</b></td><td class="column-2">ca</td><td class="column-3">cai</td><td class="column-4">cao</td><td class="column-5">can</td><td class="column-6">cang</td><td class="column-7"></td><td class="column-8">cong</td><td class="column-9">cou</td><td class="column-10">ce</td><td class="column-11"></td><td class="column-12">cen</td><td class="column-13">ceng</td><td class="column-14"></td><td class="column-15"><b>ci</b></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">cu</td><td class="column-26"></td><td class="column-27">cuo</td><td class="column-28">cui</td><td class="column-29"></td><td class="column-30">cuan</td><td class="column-31">cun</td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-13">
+	<td class="column-1"><b>s</b></td><td class="column-2">sa</td><td class="column-3">sai</td><td class="column-4">sao</td><td class="column-5">san</td><td class="column-6">sang</td><td class="column-7"></td><td class="column-8">song</td><td class="column-9">sou</td><td class="column-10">se</td><td class="column-11"></td><td class="column-12">sen</td><td class="column-13">seng</td><td class="column-14"></td><td class="column-15"><b>si</b></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">su</td><td class="column-26"></td><td class="column-27">suo</td><td class="column-28">sui</td><td class="column-29"></td><td class="column-30">suan</td><td class="column-31">sun</td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-14">
+	<td class="column-1"><b>zh</b></td><td class="column-2">zha</td><td class="column-3">zhai</td><td class="column-4">zhao</td><td class="column-5">zhan</td><td class="column-6">zhang</td><td class="column-7"></td><td class="column-8">zhong</td><td class="column-9">zhou</td><td class="column-10">zhe</td><td class="column-11">zhei</td><td class="column-12">zhen</td><td class="column-13">zheng</td><td class="column-14"></td><td class="column-15"><b>zhi</b></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">zhu</td><td class="column-26">zhua</td><td class="column-27">zhuo</td><td class="column-28">zhui</td><td class="column-29">zhuai</td><td class="column-30">zhuan</td><td class="column-31">zhun</td><td class="column-32">zhuang</td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-15">
+	<td class="column-1"><b>ch</b></td><td class="column-2">cha</td><td class="column-3">chai</td><td class="column-4">chao</td><td class="column-5">chan</td><td class="column-6">chang</td><td class="column-7"></td><td class="column-8">chong</td><td class="column-9">chou</td><td class="column-10">che</td><td class="column-11"></td><td class="column-12">chen</td><td class="column-13">cheng</td><td class="column-14"></td><td class="column-15"><b>chi</b></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">chu</td><td class="column-26">chua</td><td class="column-27">chuo</td><td class="column-28">chui</td><td class="column-29">chuai</td><td class="column-30">chuan</td><td class="column-31">chun</td><td class="column-32">chuang</td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-16">
+	<td class="column-1"><b>sh</b></td><td class="column-2">sha</td><td class="column-3">shai</td><td class="column-4">shao</td><td class="column-5">shan</td><td class="column-6">shang</td><td class="column-7"></td><td class="column-8"></td><td class="column-9">shou</td><td class="column-10">she</td><td class="column-11">shei</td><td class="column-12">shen</td><td class="column-13">sheng</td><td class="column-14"></td><td class="column-15"><b>shi</b></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">shu</td><td class="column-26">shua</td><td class="column-27">shuo</td><td class="column-28">shui</td><td class="column-29">shuai</td><td class="column-30">shuan</td><td class="column-31">shun</td><td class="column-32">shuang</td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-17">
+	<td class="column-1"><b>r</b></td><td class="column-2"></td><td class="column-3"></td><td class="column-4">rao</td><td class="column-5">ran</td><td class="column-6">rang</td><td class="column-7"></td><td class="column-8">rong</td><td class="column-9">rou</td><td class="column-10">re</td><td class="column-11"></td><td class="column-12">ren</td><td class="column-13">reng</td><td class="column-14"></td><td class="column-15"><b>ri</b></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">ru</td><td class="column-26">rua</td><td class="column-27">ruo</td><td class="column-28">rui</td><td class="column-29"></td><td class="column-30">ruan</td><td class="column-31">run</td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-18">
+	<td class="column-1"><b>g</b></td><td class="column-2">ga</td><td class="column-3">gai</td><td class="column-4">gao</td><td class="column-5">gan</td><td class="column-6">gang</td><td class="column-7"></td><td class="column-8">gong</td><td class="column-9">gou</td><td class="column-10">ge</td><td class="column-11">gei</td><td class="column-12">gen</td><td class="column-13">geng</td><td class="column-14"></td><td class="column-15"></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">gu</td><td class="column-26">gua</td><td class="column-27">guo</td><td class="column-28">gui</td><td class="column-29">guai</td><td class="column-30">guan</td><td class="column-31">gun</td><td class="column-32">guang</td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-19">
+	<td class="column-1"><b>k</b></td><td class="column-2">ka</td><td class="column-3">kai</td><td class="column-4">kao</td><td class="column-5">kan</td><td class="column-6">kang</td><td class="column-7"></td><td class="column-8">kong</td><td class="column-9">kou</td><td class="column-10">ke</td><td class="column-11">kei</td><td class="column-12">ken</td><td class="column-13">keng</td><td class="column-14"></td><td class="column-15"></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">ku</td><td class="column-26">kua</td><td class="column-27">kuo</td><td class="column-28">kui</td><td class="column-29">kuai</td><td class="column-30">kuan</td><td class="column-31">kun</td><td class="column-32">kuang</td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-20">
+	<td class="column-1"><b>h</b></td><td class="column-2">ha</td><td class="column-3">hai</td><td class="column-4">hao</td><td class="column-5">han</td><td class="column-6">hang</td><td class="column-7"></td><td class="column-8">hong</td><td class="column-9">hou</td><td class="column-10">he</td><td class="column-11">hei</td><td class="column-12">hen</td><td class="column-13">heng</td><td class="column-14"></td><td class="column-15"></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">hu</td><td class="column-26">hua</td><td class="column-27">huo</td><td class="column-28">hui</td><td class="column-29">huai</td><td class="column-30">huan</td><td class="column-31">hun</td><td class="column-32">huang</td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-21">
+	<td class="column-1"><b>j</b></td><td class="column-2"></td><td class="column-3"></td><td class="column-4"></td><td class="column-5"></td><td class="column-6"></td><td class="column-7"></td><td class="column-8"></td><td class="column-9"></td><td class="column-10"></td><td class="column-11"></td><td class="column-12"></td><td class="column-13"></td><td class="column-14"></td><td class="column-15">ji</td><td class="column-16">jia</td><td class="column-17">jiao</td><td class="column-18">jie</td><td class="column-19">jiu</td><td class="column-20">jian</td><td class="column-21">jiang</td><td class="column-22">jin</td><td class="column-23">jing</td><td class="column-24">jiong</td><td class="column-25"></td><td class="column-26"></td><td class="column-27"></td><td class="column-28"></td><td class="column-29"></td><td class="column-30"></td><td class="column-31"></td><td class="column-32"></td><td class="column-33"><b>ju</b></td><td class="column-34">jue</td><td class="column-35"><b>juan</b></td><td class="column-36"><b>jun</b></td>
+</tr>
+<tr class="row-22">
+	<td class="column-1"><b>q</b></td><td class="column-2"></td><td class="column-3"></td><td class="column-4"></td><td class="column-5"></td><td class="column-6"></td><td class="column-7"></td><td class="column-8"></td><td class="column-9"></td><td class="column-10"></td><td class="column-11"></td><td class="column-12"></td><td class="column-13"></td><td class="column-14"></td><td class="column-15">qi</td><td class="column-16">qia</td><td class="column-17">qiao</td><td class="column-18">qie</td><td class="column-19">qiu</td><td class="column-20">qian</td><td class="column-21">qiang</td><td class="column-22">qin</td><td class="column-23">qing</td><td class="column-24">qiong</td><td class="column-25"></td><td class="column-26"></td><td class="column-27"></td><td class="column-28"></td><td class="column-29"></td><td class="column-30"></td><td class="column-31"></td><td class="column-32"></td><td class="column-33"><b>qu</b></td><td class="column-34">que</td><td class="column-35"><b>quan</b></td><td class="column-36"><b>qun</b></td>
+</tr>
+<tr class="row-23">
+	<td class="column-1"><b>x</b></td><td class="column-2"></td><td class="column-3"></td><td class="column-4"></td><td class="column-5"></td><td class="column-6"></td><td class="column-7"></td><td class="column-8"></td><td class="column-9"></td><td class="column-10"></td><td class="column-11"></td><td class="column-12"></td><td class="column-13"></td><td class="column-14"></td><td class="column-15">xi</td><td class="column-16">xia</td><td class="column-17">xiao</td><td class="column-18">xie</td><td class="column-19">xiu</td><td class="column-20">xian</td><td class="column-21">xiang</td><td class="column-22">xin</td><td class="column-23">xing</td><td class="column-24">xiong</td><td class="column-25"></td><td class="column-26"></td><td class="column-27"></td><td class="column-28"></td><td class="column-29"></td><td class="column-30"></td><td class="column-31"></td><td class="column-32"></td><td class="column-33"><b>xu</b></td><td class="column-34">xue</td><td class="column-35"><b>xuan</b></td><td class="column-36"><b>xun</b></td>
+</tr>
+<tr class="row-24">
+	<td class="column-1"><b>w</b></td><td class="column-2">wa</td><td class="column-3">wai</td><td class="column-4"></td><td class="column-5">wan</td><td class="column-6">wang</td><td class="column-7">wo</td><td class="column-8"></td><td class="column-9"></td><td class="column-10"></td><td class="column-11">wei</td><td class="column-12"><b>wen</b></td><td class="column-13">weng</td><td class="column-14"></td><td class="column-15"></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25">wu</td><td class="column-26"></td><td class="column-27"></td><td class="column-28"></td><td class="column-29"></td><td class="column-30"></td><td class="column-31"></td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+<tr class="row-25">
+	<td class="column-1"><b>y</b></td><td class="column-2">ya</td><td class="column-3"></td><td class="column-4">yao</td><td class="column-5"><b>yan</b></td><td class="column-6">yang</td><td class="column-7"></td><td class="column-8">yong</td><td class="column-9">you</td><td class="column-10"><b>ye</b></td><td class="column-11"></td><td class="column-12"></td><td class="column-13"></td><td class="column-14"></td><td class="column-15">yi</td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22">yin</td><td class="column-23">ying</td><td class="column-24"></td><td class="column-25"></td><td class="column-26"></td><td class="column-27"></td><td class="column-28"></td><td class="column-29"></td><td class="column-30"></td><td class="column-31"></td><td class="column-32"></td><td class="column-33"><b>yu</b></td><td class="column-34">yue</td><td class="column-35"><b>yuan</b></td><td class="column-36"><b>yun</b></td>
+</tr>
+<tr class="row-26">
+	<td class="column-1"></td><td class="column-2">a</td><td class="column-3">ai</td><td class="column-4">ao</td><td class="column-5">an</td><td class="column-6">ang</td><td class="column-7">o</td><td class="column-8"></td><td class="column-9">ou</td><td class="column-10">e</td><td class="column-11">ei</td><td class="column-12">en</td><td class="column-13">eng</td><td class="column-14">er</td><td class="column-15"></td><td class="column-16"></td><td class="column-17"></td><td class="column-18"></td><td class="column-19"></td><td class="column-20"></td><td class="column-21"></td><td class="column-22"></td><td class="column-23"></td><td class="column-24"></td><td class="column-25"></td><td class="column-26"></td><td class="column-27"></td><td class="column-28"></td><td class="column-29"></td><td class="column-30"></td><td class="column-31"></td><td class="column-32"></td><td class="column-33"></td><td class="column-34"></td><td class="column-35"></td><td class="column-36"></td>
+</tr>
+</tbody>
+</table>
         </div>
     </div>
 
@@ -512,10 +301,9 @@
     </div>
 
     <script>
-        const audioBasePath = 'https://jpageprojects.github.io/MandarinAudio/audios/';
+        const audioBasePath = 'https://jpageprojects.github.io/MandarinAudio/audios1/';
         const sndPlayer = document.getElementById('snd_player');
         const clickRuleSelect = document.getElementById('clickRule');
-        let currentAudios = {};
 
         // Función para formatear pinyin con tonos
         function formatPinyin(pinyin, tone) {
@@ -577,7 +365,7 @@
             const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
             
             // Calcular la posición vertical centrada con el elemento
-            const menuHeight = sndPlayer.offsetHeight || 200; // altura estimada del menú
+            const menuHeight = sndPlayer.offsetHeight || 200;
             const centerY = rect.top + scrollTop + (rect.height / 2) - (menuHeight / 2);
             
             sndPlayer.style.top = centerY + 'px';
@@ -607,17 +395,17 @@
         }
 
         // Agregar hover effects
-        const pinyinTable = document.getElementById('pinyin');
+        const pinyinTable = document.getElementById('tablepress-148');
         
         pinyinTable.addEventListener('mouseover', function(e) {
             const cell = e.target.closest('td');
-            if (cell) {
+            if (cell && cell.textContent.trim()) {
                 const row = cell.parentElement;
                 const cellIndex = Array.from(row.children).indexOf(cell);
                 
                 row.classList.add('highlight');
                 
-                // Resaltar columna (todas las celdas)
+                // Resaltar columna
                 const rows = pinyinTable.querySelectorAll('tr');
                 rows.forEach(r => {
                     const cells = r.querySelectorAll('th, td');
@@ -645,10 +433,14 @@
 
         // Agregar click handlers
         pinyinTable.addEventListener('click', function(e) {
-            const cell = e.target.closest('td.val');
-            if (cell) {
+            const cell = e.target.closest('td');
+            if (cell && cell.textContent.trim() && !cell.classList.contains('column-1')) {
                 e.stopPropagation();
-                const pinyin = cell.textContent.trim();
+                let pinyin = cell.textContent.trim();
+                
+                // Eliminar las etiquetas <b> si existen
+                pinyin = pinyin.replace(/<\/?b>/g, '');
+                
                 const clickRule = clickRuleSelect.value;
                 
                 if (clickRule) {
