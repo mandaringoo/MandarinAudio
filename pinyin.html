@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de Pinyin Mandarín con Audio</title>
-<style>
+    <title>Language School - About Us</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -187,9 +187,812 @@
         }
 
     </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #111111;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 90px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #5a5a5a;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            border-bottom-color: #ff5a5a;
+        }
+
+        .btn-contact {
+            background: transparent;
+            color: #111;
+            padding: 10px 20px;
+            border: 1px solid #000;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-contact:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 400;
+            margin-bottom: 50px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .stat-box {
+            text-align: left;
+        }
+
+        .stat-box h3 {
+            font-size: 48px;
+            color: #ff5a5a;
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 10px;
+        }
+
+        .stat-box h6 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .stat-box p {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #3d3d3d;
+        }
+
+        .why-choose-content {
+            background: #a6a6a6;
+            padding: 80px 60px;
+            color: white;
+        }
+
+        .why-choose-content h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-item {
+            text-align: center;
+        }
+
+        .service-item svg,
+        .service-item img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            fill: white;
+        }
+
+        .service-item h5 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .why-choose-image {
+            background: #ff5a5a;
+            padding: 80px 60px;
+            color: white;
+        }
+
+        .why-choose-image h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .why-choose-image ul {
+            list-style: none;
+        }
+
+        .why-choose-image li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .why-choose-image li:before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: white;
+            font-weight: bold;
+        }
+
+        .btn-learn {
+            background: transparent;
+            color: white;
+            padding: 12px 30px;
+            border: 1px solid #fff;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+
+        .btn-learn:hover {
+            background: white;
+            color: #ff5a5a;
+        }
+
+        /* What We Offer */
+        .what-we-offer {
+            background: #3d3d3d;
+            color: white;
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            opacity: 0.8;
+            margin-bottom: 50px;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .offer-card {
+            background: url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=400') center/cover;
+            height: 300px;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offer-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(255,90,90,0.95), rgba(166,166,166,0.95));
+            padding: 30px;
+            color: white;
+        }
+
+        .offer-overlay h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .offer-overlay p {
+            font-size: 13px;
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .courses-header {
+            background: #3d3d3d;
+            color: white;
+            padding: 60px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .course-card {
+            background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400') center/cover;
+            height: 400px;
+            position: relative;
+            border: 1px solid #ddd;
+        }
+
+        .course-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(255,90,90,0.98), rgba(166,166,166,0.98));
+            padding: 30px;
+            color: white;
+        }
+
+        .course-overlay h5 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .course-price {
+            font-size: 32px;
+            color: #ff5a5a;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .course-overlay p {
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+
+        .btn-course {
+            background: #ff5a5a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 13px;
+        }
+
+        /* Trusted Brands */
+        .trusted {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .trusted-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            align-items: center;
+        }
+
+        .brand-logo {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .brand-logo img {
+            max-width: 100px;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+        .brand-logo:hover img {
+            opacity: 1;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background: #ff5a5a;
+            color: white;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            background: white;
+            color: #333;
+            padding: 40px 30px;
+            border-radius: 50px;
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        .team-member h5 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff5a5a;
+            border: 2px solid #ff5a5a;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: #ff5a5a;
+            color: white;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: #a6a6a6;
+            color: white;
+            text-align: center;
+        }
+
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .quote-icon {
+            font-size: 60px;
+            color: #3d3d3d;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-content h4 {
+            font-size: 20px;
+        }
+
+        /* Pinyin Section */
+        .pinyin-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .pinyin-chart-wrapper {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            overflow-x: auto;
+        }
+
+        .pinyin-chart table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .pinyin-chart th,
+        .pinyin-chart td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .pinyin-chart th {
+            background: #ff5a5a;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .pinyin-chart td.initial {
+            background: #a6a6a6;
+            color: white;
+            font-weight: bold;
+        }
+
+        .pinyin-chart td {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .pinyin-chart td:not(.initial):hover {
+            background: #ff5a5a;
+            color: white;
+        }
+
+        .pinyin-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .info-card {
+            background: #f9f9f9;
+            padding: 40px;
+            border-radius: 10px;
+            border-left: 5px solid #ff5a5a;
+        }
+
+        .info-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #3d3d3d;
+        }
+
+        .info-card p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: #3d3d3d;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 60px;
+        }
+
+        .contact-item {
+            margin-bottom: 40px;
+        }
+
+        .contact-item h5 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 60px;
+        }
+
+        .contact-form h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .contact-form > p {
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input, textarea {
+            padding: 15px;
+            border: none;
+            border-bottom: 2px solid #000;
+            font-size: 14px;
+            background: transparent;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-bottom-color: #ff5a5a;
+        }
+
+        .btn-submit {
+            background: #ff5a5a;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            align-self: flex-start;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #a6a6a6;
+        }
+
+        /* Footer */
+        footer {
+            background: #3d3d3d;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .newsletter {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #5a5a5a;
+            margin-bottom: 40px;
+        }
+
+        .newsletter h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-bottom: 2px solid white;
+            background: transparent;
+            color: white;
+        }
+
+        .newsletter button {
+            background: #ff5a5a;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-about img {
+            height: 50px;
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .footer-links h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            transition: 0.3s;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 5px;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            border-bottom-color: #ff5a5a;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .stats,
+            .services-list,
+            .offers-grid,
+            .courses-grid,
+            .brands-grid,
+            .team-grid,
+            .pinyin-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-choose,
+            .contact-wrapper,
+            .newsletter,
+            .footer-content,
+            .trusted-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stats,
+            .services-list,
+            .offers-grid,
+            .courses-grid,
+            .brands-grid,
+            .team-grid,
+            .pinyin-info {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div id="pinyin_chart">
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logoPinyin.jpeg" alt="Logo">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+                <a href="#contact" class="btn-contact">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Domina la pronunciación china<br>con nuestro Gráfico Pinyin Interactivo</h1>
+        <div class="stats">
+            <div class="stat-box">
+                <h3>400+</h3>
+                <h6>Sílabas</h6>
+                <p>Sistema completo de sonidos pinyin</p>
+            </div>
+            <div class="stat-box">
+                <h3>21</h3>
+                <h6>Iniciales</h6>
+                <p>sonidos consonánticos a dominar</p>
+            </div>
+            <div class="stat-box">
+                <h3>36</h3>
+                <h6>Finales</h6>
+                <p>combinaciones vocálicas incluidas</p>
+            </div>
+            <div class="stat-box">
+                <h3>4</h3>
+                <h6>Tonos</h6>
+                <p>más el tono neutro para practicar</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Pinyin Section -->
+    <section class="pinyin-section">
+        <div id="pinyin_chart">
         <h2 id="chart_title">Tabla de Pinyin Mandarín con Audio</h2>
         
         <div id="chart_controls">
@@ -465,5 +1268,154 @@
             e.stopPropagation();
         });
     </script>
+            </div>
+
+           
+        </div>
+    </section>
+
+    <section>
+    <!-- Additional Information -->
+    <div class="pinyin-info">
+        <div class="info-card">
+            <h3>¿Qué es el pinyin y por qué es tan importante aprenderlo primero?</h3>
+            <p>El pinyin es el sistema que usa letras latinas para representar la pronunciación real del chino mandarín, incluyendo los tonos, que son esenciales para el significado.</p>
+            <p>Para los estudiantes hispanohablantes, aprender pinyin primero es fundamental porque no usamos caracteres chinos, el mandarín tiene sonidos que no existen en español y además es un idioma tonal.</p>
+            <p>Si un estudiante empieza chino sin dominar pinyin, normalmente aprende a pronunciar mal, se confunde con los tonos y desarrolla errores difíciles de corregir más adelante. Por eso, el pinyin es la base de una buena pronunciación desde el inicio.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>¿Para qué sirve la tabla de pinyin?</h3>
+            <p>La tabla de pinyin muestra todos los pinyin que realmente existen en el chino mandarín.</p>
+            <p>Esto significa que no todas las combinaciones de letras son válidas en chino, aunque parezcan posibles para un hispanohablante.</p>
+            <p>Gracias a la tabla, el estudiante puede verificar si un pinyin existe o no existe en el chino mandarín y evitar inventar sonidos que no se usan en el idioma.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>¿Cuál es el objetivo de la tabla de pinyin?</h3>
+            <p>El objetivo principal de la tabla de pinyin es:</p>
+            <ul>
+                <li>Mostrar todos los sonidos oficiales del mandarín</li>
+                <li>Servir como un mapa completo de pronunciación</li>
+                <li>Ayudar al estudiante a entender cómo se forman los sonidos combinando iniciales y finales</li>
+            </ul>
+        </div>
+    </div>
+</section>
+    <!-- What We Offer -->
+    <section class="what-we-offer">
+        <iframe id="JotFormIFrame-019b9f2af89f708b9bee5ec91ac5863eb022"
+  title="MaoMao MandarinGoo HSK1: Asesor de chino mandarín" onload="window.parent.scrollTo(0,0)"
+  allowtransparency="true" allow="geolocation; microphone; camera; fullscreen"
+  src="https://agent.jotform.com/019b9f2af89f708b9bee5ec91ac5863eb022?embedMode=iframe&background=1&shadow=1"
+  frameborder="0" style="
+    max-width:100%;
+    height:688px;
+    border:none;
+    
+    width:100%;
+  " scrolling="no">
+</iframe>
+<script src='https://cdn.jotfor.ms/s/umd/9284bce5746/for-form-embed-handler.js'></script>
+<script>
+  window.jotformEmbedHandler("iframe[id='JotFormIFrame-019b9f2af89f708b9bee5ec91ac5863eb022']",
+    "https://www.jotform.com")
+</script>
+    </section>
+
+   
+<!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
+            <div class="testimonial-content">
+                <div class="quote-icon">"</div>
+                <p>"La tabla de pinyin fue mi salvación. Como hispanohablante, muchos sonidos del mandarín me parecían imposibles al principio. Pero practicando con la tabla cada día, aprendí exactamente qué combinaciones existen y cuáles no. Ahora puedo leer cualquier texto en pinyin sin dudar y mi profesor siempre me felicita por mi pronunciación clara."</p>
+                <h4>Carlos Méndez</h4>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h5>📞 Call Us</h5>
+                    <p>+123 456 7890</p>
+                    <p>+123 456 7890</p>
+                </div>
+                <div class="contact-item">
+                    <h5>📍 Location</h5>
+                    <p>121 Rock Street, 21 Avenue, New York, NY 92103-9000</p>
+                </div>
+                <div class="contact-item">
+                    <h5>✉ Email</h5>
+                    <a href="mailto:hi@email.com">hi@email.com</a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Have any question?</h3>
+                <p>Your email address will not be published. Required field are marked*</p>
+                <form>
+                    <input type="text" placeholder="Enter your Name" required>
+                    <input type="email" placeholder="Enter a valid email address" required>
+                    <textarea rows="4" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="newsletter">
+                <div>
+                    <h3>Subscribe to Newsletter</h3>
+                    <p>Stay updated with our latest news and offers</p>
+                </div>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter a valid email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="https://via.placeholder.com/200x60/ffffff/ff5a5a?text=Language+School" alt="Logo">
+                    <p>📍 121 Rock Street, 21 Avenue, New York, NY 92103-9000</p>
+                    <p>📞 +123 456 7890</p>
+                    <p>✉ hi@email.com</p>
+                    <div class="social-icons" style="justify-content: flex-start; margin-top: 20px;">
+                        <a href="#">f</a>
+                        <a href="#">t</a>
+                        <a href="#">in</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="#">Private Lessons</a></li>
+                        <li><a href="#">Online Learning</a></li>
+                        <li><a href="#">English for Kids</a></li>
+                        <li><a href="#">Long-Term Courses</a></li>
+                        <li><a href="#">English for Business</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Help & support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">Our Blog</a></li>
+                        <li><a href="#">Our Partners</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
