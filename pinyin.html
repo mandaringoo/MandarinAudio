@@ -925,7 +925,7 @@
                 /* display: none; */
             }
             .btn-contact  {
-                display: none; 
+ /* display: none; */
             }
         }
 
@@ -944,6 +944,41 @@
                 font-size: 36px;
             }
         }
+        /* Estilos para el botón de contacto en modo normal */
+.btn-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-text {
+    display: inline;
+}
+
+/* Ocultar el icono de contacto en móvil por defecto */
+.contact-icon-mobile {
+    display: none;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ocultar el botón de contacto con texto */
+    .btn-contact {
+        display: none;
+    }
+    
+    /* Mostrar el icono de contacto junto a las redes sociales */
+    .contact-icon-mobile {
+        display: inline-block;
+    }
+    
+    /* Asegurar que todos los iconos tengan el mismo estilo */
+    .social-nav ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -986,12 +1021,21 @@
                                 </svg>
                             </a>
                         </li>
-                    </ul>
-                </nav>
-                <a href="#contact" class="btn-contact">Contact Us</a>
-            </div>
+                    <li class="contact-icon-mobile">
+                        <a href="#contact" aria-label="Contact Us">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn-contact">
+                <span class="btn-text">Contact Us</span>
+            </a>
         </div>
-    </header>
+    </div>
+</header>
 
     <!-- Hero Section -->
 <section class="hero">
