@@ -188,6 +188,7 @@
 
     </style>
     <style>
+        
         * {
             margin: 0;
             padding: 0;
@@ -209,7 +210,7 @@
         /* Header */
         header {
             background: #fff;
-            padding: 20px 0;
+            padding: 2px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -921,7 +922,10 @@
             }
 
             nav ul {
-                display: none;
+                /* display: none; */
+            }
+            .btn-contact  {
+                display: none; 
             }
         }
 
@@ -948,14 +952,40 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="logoPinyin.png" alt="Logo">
+                    <img src="https://jpageprojects.github.io/MandarinAudio/logoPinyin.png" alt="Logo de Mandarin Pinyin">
                 </div>
-                <nav>
+                <nav class="social-nav">
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li>
+                            <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                                </svg>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <a href="#contact" class="btn-contact">Contact Us</a>
@@ -1341,40 +1371,77 @@ What We Offer -->
 
     
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="contact-wrapper">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h5>📞 Call Us</h5>
-                    <p>+123 456 7890</p>
-                    <p>+123 456 7890</p>
-                </div>
-                <div class="contact-item">
-                    <h5>📍 Location</h5>
-                    <p>121 Rock Street, 21 Avenue, New York, NY 92103-9000</p>
-                </div>
-                <div class="contact-item">
-                    <h5>✉ Email</h5>
-                    <a href="mailto:hi@email.com">hi@email.com</a>
-                </div>
-                 <div class="social-icons" style="justify-content: flex-start; margin-top: 20px;">
-                        <a href="#">f</a>
-                        <a href="#">t</a>
-                        <a href="#">in</a>
-                    </div>
+    <!-- Contact  -->
+  <section class="contact" id="contact">
+    <div class="contact-wrapper">
+        <div class="contact-info">
+            <div class="contact-item">
+                <h5>📱 WhatsApp</h5>
+                <p>+507 6682 1821</p>
             </div>
-            <div class="contact-form">
-                <h3>Have any question?</h3>
-                <p>Your email address will not be published. Required field are marked*</p>
-                <form>
-                    <input type="text" placeholder="Enter your Name" required>
-                    <input type="email" placeholder="Enter a valid email address" required>
-                    <textarea rows="4" placeholder="Message" required></textarea>
-                    <button type="submit" class="btn-submit">Send Message</button>
-                </form>
+            <div class="contact-item">
+                <h5>📍 Ubicación</h5>
+                <p>Panamá</p>
+            </div>
+            <div class="contact-item">
+                <h5>🌐 Redes Sociales</h5>
+                <p>Síguenos en nuestras plataformas</p>
+            </div>
+            <div class="social-icons" style="justify-content: flex-start; margin-top: 20px; display: flex; gap: 15px;">
+                <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #E4405F; color: white; text-decoration: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #1877F2; color: white; text-decoration: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                </a>
+                <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #25D366; color: white; text-decoration: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                </a>
+                <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #000000; color: white; text-decoration: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                </a>
             </div>
         </div>
-    </section>   
+      <div class="contact-form">
+    <h3>¿Tienes alguna pregunta?</h3>
+    <p>Escríbenos y te responderemos lo antes posible</p>
+    <form action="https://formspree.io/f/mzdadqnp" method="POST">
+        <input type="text" name="nombre" placeholder="Ingresa tu nombre" required>
+        <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required>
+        <textarea name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+        <button type="submit" class="btn-submit">Enviar Mensaje</button>
+    </form>
+</div>
+    </div>
+</section>
+
+<footer style="background-color: #f8f9fa; padding: 40px 20px; text-align: center; border-top: 1px solid #e0e0e0; margin-top: 60px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <p style="margin: 0 0 15px 0; color: #333; font-size: 16px; font-weight: 600;">
+      Gráfico Pinyin Interactivo
+    </p>
+    <p style="margin: 0 0 20px 0; color: #666; font-size: 14px;">
+      Tu herramienta completa para dominar la pronunciación del chino mandarín
+    </p>
+    <div style="margin: 20px 0;">
+      <a href="#" style="color: #007bff; text-decoration: none; margin: 0 15px; font-size: 14px;">Inicio</a>
+      <a href="#" style="color: #007bff; text-decoration: none; margin: 0 15px; font-size: 14px;">Tabla Pinyin</a>
+      <a href="#" style="color: #007bff; text-decoration: none; margin: 0 15px; font-size: 14px;">Contacto</a>
+    </div>
+    <p style="margin: 15px 0 0 0; color: #999; font-size: 13px;">
+      Hecho con ❤️ para estudiantes de chino
+    </p>
+  </div>
+</footer>
 </body>
 </html>
