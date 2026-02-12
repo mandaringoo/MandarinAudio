@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language School - About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -979,6 +980,25 @@
         justify-content: center;
     }
 }
+.social-nav i {
+    font-size: 24px; /* Tamaño del logo */
+    transition: transform 0.3s ease;
+}
+
+.social-nav a:hover i {
+    transform: scale(1.1); /* Efecto de agrandado al pasar el mouse */
+}
+/* Desactiva los eventos de clic y el puntero en la fila de las finales */
+.tablepress tbody tr.row-2 td {
+    pointer-events: none; /* Esta línea impide que el clic llegue al script */
+    cursor: default;
+    background-color: #fff !important; /* Mantener color blanco */
+}
+
+/* Opcional: Si quieres que la primera columna de esa fila sí se vea como el resto */
+.tablepress tbody tr.row-2 td.column-1 {
+    background-color: #ffb570 !important;
+}
     </style>
 </head>
 <body>
@@ -987,57 +1007,48 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="https://jpageprojects.github.io/MandarinAudio/logoPinyin.png" alt="Logo de Mandarin Pinyin">
+                    <a href="#">
+                        <img src="https://jpageprojects.github.io/MandarinAudio/logoPinyin.png"  alt="Logo de Mandarin Pinyin">
+                    </a>
                 </div>
-                <nav class="social-nav">
-                    <ul>
-                        <li>
-                            <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                                </svg>
-                            </a>
-                        </li>
-                    <li class="contact-icon-mobile">
-                        <a href="#contact" aria-label="Contact Us">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+<nav class="social-nav">
+    <ul>
+        <li>
+            <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </li>
+        <li class="contact-icon-mobile">
+            <a href="#contact" aria-label="Contact Us">
+                <i class="fa-regular fa-comment-dots"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
             <a href="#contact" class="btn-contact">
-                <span class="btn-text">Contact Us</span>
+                <span class="btn-text">Contáctanos</span>
             </a>
         </div>
     </div>
 </header>
 
-    <!-- Hero Section -->
+
+    <!-- Hero Section 
 <section class="hero">
     <div class="container">
         <h1>Domina la pronunciación china<br>con nuestro Gráfico Pinyin Interactivo</h1>
@@ -1065,7 +1076,7 @@
         </div>
     </div>
 </section>
-
+-->
     <!-- Pinyin Section -->
     <section class="pinyin-section">
         <div id="pinyin_chart">
@@ -1406,55 +1417,124 @@ What We Offer -->
         <div class="container">
             <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
             <div class="testimonial-content">
-                <div class="quote-icon">"</div>
                 <p>"La tabla de pinyin fue mi salvación. Como hispanohablante, muchos sonidos del mandarín me parecían imposibles al principio. Pero practicando con la tabla cada día, aprendí exactamente qué combinaciones existen y cuáles no. Ahora puedo leer cualquier texto en pinyin sin dudar y mi profesor siempre me felicita por mi pronunciación clara."</p>
-                <h4>Carlos Méndez</h4>
             </div>
         </div>
+        
     </section>
+<section id="video-section">
+    <div style="width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding-bottom: 10px;">
+        <video 
+            id="mission-video"
+            width="100%" 
+            height="auto" 
+            muted 
+            playsinline
+            preload="metadata"
+            style="display: block; width: 100%;">
+            <source src="https://jpageprojects.github.io/MandarinAudio/mision2.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+    </div>
+</section>
 
-    
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('mission-video');
+    const section = document.getElementById('video-section');
+    let hasPlayed = false;
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasPlayed) {
+                video.play();
+                hasPlayed = true;
+            }
+        });
+    }, {
+        threshold: 0.5 // Se activa cuando el 50% de la sección es visible
+    });
+
+    observer.observe(section);
+
+    // Pausar el video en el primer frame cuando termine
+    video.addEventListener('ended', function() {
+        video.currentTime = 1.5;
+        video.pause();
+    });
+});
+</script>
+<section id="video-section">
+    <div style="width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <video 
+            id="ourcurso-video"
+            width="100%" 
+            height="auto" 
+            muted 
+            playsinline
+            preload="metadata"
+            style="display: block; width: 100%;">
+            <source src="https://jpageprojects.github.io/MandarinAudio/ourcurso.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('ourcurso-video');
+    const section = document.getElementById('video-section');
+    let hasPlayed = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasPlayed) {
+                video.play();
+                hasPlayed = true;
+            }
+        });
+    }, {
+        threshold: 0.5 // Se activa cuando el 50% de la sección es visible
+    });
+
+    observer.observe(section);
+
+    // Pausar el video en el primer frame cuando termine
+    video.addEventListener('ended', function() {
+        video.currentTime = 1.5;
+        video.pause();
+    });
+});
+</script>
     <!-- Contact  -->
   <section class="contact" id="contact">
     <div class="contact-wrapper">
         <div class="contact-info">
             <div class="contact-item">
-                <h5>📱 WhatsApp</h5>
-                <p>+507 6682 1821</p>
-            </div>
-            <div class="contact-item">
-                <h5>📍 Ubicación</h5>
-                <p>Panamá</p>
-            </div>
-            <div class="contact-item">
                 <h5>🌐 Redes Sociales</h5>
-                <p>Síguenos en nuestras plataformas</p>
+                <p>Síguenos en nuestras redes sociales y contáctanos para acceder a más contenido de chino mandarín y conocer todos los detalles de nuestros cursos online. En Academia MandarinGoo estamos listos para acompañarte en tu camino hacia el dominio del idioma.</p>
             </div>
             <div class="social-icons" style="justify-content: flex-start; margin-top: 20px; display: flex; gap: 15px;">
-                <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #E4405F; color: white; text-decoration: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                    </svg>
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #1877F2; color: white; text-decoration: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                </a>
-                <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #25D366; color: white; text-decoration: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                    </svg>
-                </a>
-                <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #000000; color: white; text-decoration: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                    </svg>
-                </a>
-            </div>
+    <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram" 
+       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #E4405F; color: white; text-decoration: none; font-size: 20px;">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook" 
+       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #1877F2; color: white; text-decoration: none; font-size: 20px;">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" 
+       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #25D366; color: white; text-decoration: none; font-size: 22px;">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok" 
+       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #000000; color: white; text-decoration: none; font-size: 18px;">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+</div>
         </div>
       <div class="contact-form">
     <h3>¿Tienes alguna pregunta?</h3>
