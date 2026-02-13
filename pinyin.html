@@ -28,6 +28,16 @@
         #chart_title {
             font-size: 28px;
             font-weight: normal;
+             font-family: 'Playfair Display', serif;
+font-family: 'Montserrat', sans-serif;
+letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
+            text-align: center;
+            margin: 20px 0 10px;
+            color: #000;
+        }
+        #chart_title2 {
+            font-size: 13px;
+            font-weight: normal;
             text-align: center;
             margin: 20px 0 10px;
             color: #000;
@@ -63,7 +73,7 @@
         /* Estilos para la tabla tablepress */
         .tablepress {
             border-collapse: collapse;
-            font-size: 12px;
+            font-size: 13px;
             width: auto;
             background: white;
             border: 1px solid #000;
@@ -71,11 +81,11 @@
         }
 
         .tablepress thead th {
-            background-color: #ff7070;
+            background-color: #2e79ce;
             border: 1px solid #000;
             font-weight: bold;
             padding: 1px;
-            font-size: 12px;
+            font-size: 13px;
             text-align: center;
             min-width: 24px;
         }
@@ -93,7 +103,7 @@
         }
 
         .tablepress tbody td:first-child {
-            background-color: #ffb570;
+            background-color: #d1e3f8;
             font-weight: bold;
             cursor: pointer;
         }
@@ -127,15 +137,15 @@
         }
 
         tr.highlight td {
-            background-color: #FFD1D1;
+            background-color: #e3effd;
         }
 
         tr.highlight td:first-child {
-            background-color: #FFD8A8;
+            background-color: #bbd9f7;
         }
 
         td.current-cell {
-            background-color: #FF5E00 !important;
+            background-color: #1877F2 !important;
         }
 
         #snd_player {
@@ -211,7 +221,7 @@
         /* Header */
         header {
             background: #fff;
-            padding: 2px 0;
+            padding: 0px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -225,10 +235,37 @@
         }
 
         .logo img {
-            height: 90px;
+            height: 110px;
             color: transparent;
         }
+        /* Media query para el logo */
+@media (max-width: 992px) {
+    .logo img {
+        height: 90px;
+    }
+}
 
+@media (max-width: 768px) {
+    .logo img {
+        height: 70px;
+    }
+    
+    .header-content {
+        padding: 2px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo img {
+        height: 60px;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo img {
+        height: 50px;
+    }
+}
         nav ul {
             display: flex;
             list-style: none;
@@ -248,7 +285,7 @@
         }
 
         nav a:hover {
-            border-bottom-color: #ff5a5a;
+            border-bottom-color: #2e79ce;
         }
 
         .btn-contact {
@@ -297,7 +334,7 @@
 
         .stat-box h3 {
             font-size: 48px;
-            color: #ff5a5a;
+            color: #2e79ce;
             font-family: 'Oswald', sans-serif;
             margin-bottom: 10px;
         }
@@ -308,7 +345,7 @@
         }
 
         .stat-box p {
-            font-size: 12px;
+            font-size: 13px;
             opacity: 0.8;
         }
 
@@ -360,7 +397,7 @@
         }
 
         .why-choose-image {
-            background: #ff5a5a;
+            background: #2e79ce;
             padding: 80px 60px;
             color: white;
         }
@@ -402,7 +439,7 @@
 
         .btn-learn:hover {
             background: white;
-            color: #ff5a5a;
+            color: #2e79ce;
         }
 
         /* What We Offer */
@@ -443,7 +480,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(255,90,90,0.95), rgba(166,166,166,0.95));
+            background: linear-gradient(to top, rgba(46,121,206,0.95), rgba(166,166,166,0.95));
             padding: 30px;
             color: white;
         }
@@ -501,18 +538,18 @@
 
         .course-price {
             font-size: 32px;
-            color: #ff5a5a;
+            color: #2e79ce;
             font-weight: bold;
             margin: 10px 0;
         }
 
         .course-overlay p {
-            font-size: 12px;
+            font-size: 13px;
             margin-bottom: 15px;
         }
 
         .btn-course {
-            background: #ff5a5a;
+            background: #2e79ce;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -560,7 +597,7 @@
         /* Team Section */
         .team {
             padding: 80px 0;
-            background: #ff5a5a;
+            background: #2e79ce;
             color: white;
             text-align: center;
         }
@@ -598,58 +635,143 @@
             margin-bottom: 20px;
         }
 
-        .social-icons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
+        /* Iconos sociales del equipo (centrados con borde) */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
 
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ff5a5a;
-            border: 2px solid #ff5a5a;
-            transition: 0.3s;
-        }
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2e79ce;
+    border: 2px solid #2e79ce;
+    transition: 0.3s;
+    text-decoration: none;
+}
 
-        .social-icons a:hover {
-            background: #ff5a5a;
-            color: white;
-        }
+.social-icons a:hover {
+    background: #2e79ce;
+    color: white;
+}
 
-        /* Testimonials */
+/* Iconos sociales de contacto (alineados a la izquierda con colores) */
+.social-icons-contact {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.social-icons-contact a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.social-icons-contact a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.social-icons-contact a.instagram {
+    background: #E4405F;
+    font-size: 20px;
+}
+
+.social-icons-contact a.facebook {
+    background: #1877F2;
+    font-size: 20px;
+}
+
+.social-icons-contact a.whatsapp {
+    background: #25D366;
+    font-size: 22px;
+}
+
+.social-icons-contact a.tiktok {
+    background: #000000;
+    font-size: 18px;
+}
+
+        /* Contenedor principal */
         .testimonials {
-            padding: 80px 0;
+            padding: 80px 20px;
             background: #a6a6a6;
             color: white;
-            text-align: center;
         }
 
-        .testimonial-content {
-            max-width: 800px;
+        .testimonial-flex {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px;
+            display: flex;
+            align-items: center; /* Centra verticalmente el texto con la imagen */
+            justify-content: space-between;
+            gap: 50px; /* Espacio entre el texto y la imagen */
+        }
+
+        /* Estilo del texto */
+        .testimonial-text {
+            flex: 1; /* Toma el espacio disponible */
+            text-align: left; /* Alineado a la izquierda en PC */
         }
 
         .quote-icon {
             font-size: 60px;
             color: #3d3d3d;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-text p {
+            font-size: 18px;
+            line-height: 1.8;
             margin-bottom: 20px;
         }
 
-        .testimonial-content p {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 30px;
+        /* Estilo de la imagen (Grande a la derecha) */
+        .testimonial-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
         }
 
-        .testimonial-content h4 {
-            font-size: 20px;
+        .testimonial-image img {
+            width: 100%;
+            max-width: 450px; /* Tamaño "medianamente grande" */
+            height: auto;
+            border-radius: 15px; /* Bordes suavizados */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+
+        /* --- RESPONSIVE: Cuando la resolución baje --- */
+        @media (max-width: 768px) {
+            .testimonial-flex {
+                flex-direction: column; /* Imagen pasa abajo */
+                text-align: center;
+            }
+
+            .testimonial-text {
+                text-align: center;
+            }
+
+            .testimonial-image img {
+                max-width: 300px; /* Se hace un poco más pequeña en móvil */
+                margin-top: 30px;
+            }
         }
 
         /* Pinyin Section */
@@ -681,7 +803,7 @@
         }
 
         .pinyin-chart th {
-            background: #ff5a5a;
+            background: #2e79ce;
             color: white;
             font-weight: bold;
             font-size: 16px;
@@ -699,7 +821,7 @@
         }
 
         .pinyin-chart td:not(.initial):hover {
-            background: #ff5a5a;
+            background: #2e79ce;
             color: white;
         }
 
@@ -715,7 +837,7 @@
             background: #f9f9f9;
             padding: 40px;
             border-radius: 10px;
-            border-left: 5px solid #ff5a5a;
+            border-left: 5px solid #2e79ce;
         }
 
         .info-card h3 {
@@ -797,11 +919,11 @@
 
         input:focus, textarea:focus {
             outline: none;
-            border-bottom-color: #ff5a5a;
+            border-bottom-color: #2e79ce;
         }
 
         .btn-submit {
-            background: #ff5a5a;
+            background: #2e79ce;
             color: white;
             padding: 15px 40px;
             border: none;
@@ -852,7 +974,7 @@
         }
 
         .newsletter button {
-            background: #ff5a5a;
+            background: #2e79ce;
             color: white;
             padding: 12px 30px;
             border: none;
@@ -899,7 +1021,7 @@
 
         .footer-links a:hover {
             opacity: 1;
-            border-bottom-color: #ff5a5a;
+            border-bottom-color: #2e79ce;
         }
 
         /* Responsive */
@@ -967,6 +1089,9 @@
     .btn-contact {
         display: none;
     }
+    .titulo-header{
+        display: none;
+    }
     
     /* Mostrar el icono de contacto junto a las redes sociales */
     .contact-icon-mobile {
@@ -997,7 +1122,209 @@
 
 /* Opcional: Si quieres que la primera columna de esa fila sí se vea como el resto */
 .tablepress tbody tr.row-2 td.column-1 {
-    background-color: #ffb570 !important;
+    background-color: #d1e3f8 !important;
+}
+
+.titulo-header {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.titulo-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3d3d3d 0%, #2e79ce 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 8px 0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+}
+
+.titulo-header h2 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #666;
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 2px solid #2e79ce;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+/* Estilo del Contenedor Principal (Cerrado) */
+    .main-faq-container {
+        border: 2px dashed #ccc;
+        border-radius: 12px;
+        background-color: #fafafa;
+        margin: 20px 0;
+        transition: all 0.3s ease;
+    }
+
+    .main-faq-container[open] {
+        border: 2px solid #1877F2;
+        background-color: #fff;
+    }
+
+    .main-faq-summary {
+        padding: 25px;
+        cursor: pointer;
+        list-style: none;
+        outline: none;
+    }
+
+    .main-faq-summary::-webkit-details-marker { display: none; }
+
+    .summary-header {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .main-title {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #333;
+    }
+
+    .tap-indicator {
+        font-size: 0.9rem;
+        color: #1877F2;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Contenedor interno de las preguntas */
+    .FQ-wrapper {
+        padding: 0 20px 20px 20px;
+        animation: fadeIn 0.4s ease;
+    }
+
+    /* Estilo de cada pregunta individual */
+    .faq-item {
+        border-bottom: 1px solid #eee;
+        background: #fff;
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-item summary {
+        padding: 15px 10px;
+        font-weight: 600;
+        color: #444;
+        cursor: pointer;
+        transition: color 0.2s;
+    }
+
+    .faq-item summary:hover {
+        color: #E4405F;
+    }
+
+    .faq-content {
+        padding: 0 15px 20px 15px;
+        color: #555;
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    /* Animación de entrada */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+/* --- Estilos Navegación --- */
+.main-nav {
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    padding: 2px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end; /* Empuja todo a la derecha */
+    align-items: center;
+    padding: 0 40px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #a6a6a6;
+}
+
+/* Esconder elementos de móvil en PC */
+#menu-check, .menu-icon { display: none; }
+
+/* --- Responsive: Menú Lateral --- */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: flex-end; /* Icono a la derecha */
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .menu-icon span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background: #3d3d3d;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 280px;
+        height: 100vh;
+        background: #ffffff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+    }
+
+    #menu-check:checked ~ .nav-links {
+        right: 0;
+    }
+
+    /* Animación X */
+    #menu-check:checked ~ .menu-icon span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    #menu-check:checked ~ .menu-icon span:nth-child(2) { opacity: 0; }
+    #menu-check:checked ~ .menu-icon span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
     </style>
 </head>
@@ -1011,41 +1338,63 @@
                         <img src="https://jpageprojects.github.io/MandarinAudio/logoPinyin.png"  alt="Logo de Mandarin Pinyin">
                     </a>
                 </div>
-<nav class="social-nav">
-    <ul>
-        <li>
-            <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
-        </li>
-        <li>
-            <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
-        </li>
-        <li>
-            <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
-        </li>
-        <li class="contact-icon-mobile">
-            <a href="#contact" aria-label="Contact Us">
-                <i class="fa-regular fa-comment-dots"></i>
-            </a>
-        </li>
-    </ul>
-</nav>
+                <div class="titulo-header">
+                    <h1>ACADEMIA MANDARIN GOO</h1> 
+                    <h2>TABLA DE PINYIN INTERACTIVO</h2>
+                </div>
+                    <nav class="social-nav">
+                        <ul>
+                            <li>
+                                <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                </a>
+                            </li>
+                            <li class="contact-icon-mobile">
+                                <a href="#contact" aria-label="Contact Us">
+                                    <i class="fa-regular fa-comment-dots"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
             <a href="#contact" class="btn-contact">
                 <span class="btn-text">Contáctanos</span>
             </a>
         </div>
     </div>
+    <nav class="main-nav">
+    <div class="nav-container">
+        <input type="checkbox" id="menu-check">
+        
+        <label for="menu-check" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <ul class="nav-links">
+            <li><a href="#curso">Nuestro Curso</a></li>
+            <li><a href="#nosotros">Sobre Nosotros</a></li>
+            <li><a href="#contacto">Contáctanos</a></li>
+        </ul>
+    </div>
+</nav>
 </header>
+
 
 
     <!-- Hero Section 
@@ -1081,7 +1430,8 @@
     <section class="pinyin-section">
         <div id="pinyin_chart">
         <h2 id="chart_title">Tabla de Pinyin Mandarín con Audio</h2>
-        
+        <h2 id="chart_title2">Selecciona una sílaba para escuchar el audio y practicar con la grabación.
+        <a id="chart_title2" href="https://studycli.org/wp-content/uploads/2021/06/printable-chinese-pinyin-chart.pdf" style="color: #0645ad; text-decoration: none;"> Presionar aquí<a> para ver el PDF del cuadro</h2>
         <div id="chart_controls">
             <label>Al hacer clic:
                 <select class="click_rule" id="clickRule">
@@ -1180,6 +1530,39 @@
 </tbody>
 </table>
         </div>
+        <div class="social-icons-contact" style="display: flex; justify-content: center !important;">
+    <a href="https://www.instagram.com/academiamandaringoo" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Instagram"
+       class="instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="https://www.facebook.com/profile.php?id=61582972204214" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Facebook"
+       class="facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <a href="https://wa.me/50766821821" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="WhatsApp"
+       class="whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <a href="https://www.tiktok.com/@mandaringoo888" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="TikTok"
+       class="tiktok">
+        <i class="fa-brands fa-tiktok"></i>
+    </a>
+</div>
     </div>
 
     <div id="snd_player">
@@ -1412,16 +1795,23 @@
 </section>
 What We Offer -->
 
-<!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
-            <div class="testimonial-content">
-                <p>"La tabla de pinyin fue mi salvación. Como hispanohablante, muchos sonidos del mandarín me parecían imposibles al principio. Pero practicando con la tabla cada día, aprendí exactamente qué combinaciones existen y cuáles no. Ahora puedo leer cualquier texto en pinyin sin dudar y mi profesor siempre me felicita por mi pronunciación clara."</p>
-            </div>
-        </div>
+<section class="testimonials">
+    <div class="container testimonial-flex">
         
-    </section>
+        <div class="testimonial-text">
+            
+            <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
+            <p>"La tabla de pinyin fue mi salvación. Como hispanohablante, muchos sonidos del mandarín me parecían imposibles al principio. Pero practicando con la tabla cada día, aprendí exactamente qué combinaciones existen y cuáles no. Ahora puedo leer cualquier texto en pinyin sin dudar y mi profesor siempre me felicita por mi pronunciación clara."</p>
+        </div>
+
+        <div class="testimonial-image">
+            <img src="https://jpageprojects.github.io/MandarinAudio/ourstudent.jpeg" alt="Estudiante practicando">
+        </div>
+
+    </div>
+</section>
+
+
 <section id="video-section">
     <div style="width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding-bottom: 10px;">
         <video 
@@ -1464,6 +1854,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+<!--
+<section>
+    <img src="3.png" alt="mision">
+</section>
+
+ -->
 <section id="video-section">
     <div style="width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
         <video 
@@ -1535,17 +1932,110 @@ document.addEventListener('DOMContentLoaded', function() {
         <i class="fa-brands fa-tiktok"></i>
     </a>
 </div>
-        </div>
-      <div class="contact-form">
-    <h3>¿Tienes alguna pregunta?</h3>
-    <p>Escríbenos y te responderemos lo antes posible</p>
-    <form action="https://formspree.io/f/mzdadqnp" method="POST">
-        <input type="text" name="nombre" placeholder="Ingresa tu nombre" required>
-        <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required>
-        <textarea name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
-        <button type="submit" class="btn-submit">Enviar Mensaje</button>
-    </form>
 </div>
+    <details class="main-faq-container">
+    <summary class="main-faq-summary">
+        <div class="summary-header">
+            <span class="main-title">❓ Preguntas Frecuentes</span>
+            <span class="tap-indicator">Tocar para ver todas las preguntas</span>
+        </div>
+    </summary>
+
+    <div class="FQ-wrapper">
+        
+        <details class="faq-item">
+            <summary>1. No sé nada de chino mandarín. ¿Puedo empezar desde cero?</summary>
+            <div class="faq-content">
+                <p><strong>Sí, por supuesto 💫</strong></p>
+                <p>En Academia MandarinGoo, nuestros cursos están diseñados por nuestro profesor nativo de chino mandarín, especializado en enseñar a hispanohablantes. Empezamos desde cero, con explicaciones claras, acompañadas de materiales de apoyo que te ayudan a entender mejor cada lección.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>2. 🧠 Siento que siempre se me olvida lo que aprendo. ¿Este curso realmente me ayudará?</summary>
+            <div class="faq-content">
+                <p><strong>Sí, te entendemos 🤍</strong></p>
+                <p>Además de los videos, el curso incluye materiales de apoyo y tips prácticos que refuerzan lo aprendido. Esto te permite repasar, practicar y asimilar el contenido con más seguridad y confianza.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>3. 🗣️ Me da miedo hablar chino y equivocarme. ¿Este curso me ayudará?</summary>
+            <div class="faq-content">
+                <p><strong>Sí, totalmente 💛</strong></p>
+                <p>El curso está pensado para que avances sin presión. Los videos, junto con los ejercicios de apoyo y recomendaciones prácticas, te ayudan a ganar confianza poco a poco y a sentirte cómodo usando el idioma.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>4. 🔤 Siempre me confundo con los tonos. ¿Aquí se trabaja la pronunciación?</summary>
+            <div class="faq-content">
+                <p><strong>Sí, y es una parte fundamental del curso 🌱</strong></p>
+                <p>Nuestro profesor nativo explica pinyin y tonos de forma clara para hispanohablantes, apoyándose en material visual y guías prácticas, para que puedas practicar cuantas veces lo necesites.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>5. 🤯 Tengo que traducir todo en mi mente al español. ¿Eso se puede mejorar?</summary>
+            <div class="faq-content">
+                <p><strong>Sí, claro que sí ✨</strong></p>
+                <p>Gracias a los ejemplos, los videos y los materiales complementarios, aprenderás a entender el chino mandarín de manera más natural, sin depender tanto de la traducción.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>6. 👂 Entiendo al leer, pero no cuando escucho chino. ¿Este curso me servirá?</summary>
+            <div class="faq-content">
+                <p><strong>Sí 💛</strong></p>
+                <p>La comprensión auditiva se trabaja de forma progresiva, combinando los videos con material de apoyo, para que entrenes tu oído sin estrés y a tu propio ritmo.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>7. ⏳ ¿Cuánto dura el curso?</summary>
+            <div class="faq-content">
+                <p>El curso es 100% pregrabado, por lo que puedes avanzar a tu propio ritmo. Tienes acceso a los videos, materiales de apoyo y tips para estudiar cuando y donde quieras.</p>
+                <p>✨ <strong>También contamos con la opción de clases online 100% en vivo</strong> con profesor nativo. Consúltanos por WhatsApp para recibir más información sobre fechas e inscripciones.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>8. 📚 ¿Cómo son las clases?</summary>
+            <div class="faq-content">
+                <p>Las clases son claras, dinámicas y bien explicadas. Además de los videos, cuentas con materiales de apoyo descargables y tips que te ayudan a reforzar lo aprendido.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>9. 🎯 ¿Qué nivel necesito para iniciar?</summary>
+            <div class="faq-content">
+                <p><strong>Ninguno 😊</strong></p>
+                <p>El curso está diseñado para que puedas comenzar desde cero y apoyarte en los materiales incluidos para entender cada tema con tranquilidad.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>10. 🏆 ¿Qué lograré al terminar el curso?</summary>
+            <div class="faq-content">
+                <p>Al finalizar el curso, tendrás una base sólida de chino mandarín, mejor pronunciación y comprensión, gracias a la combinación de videos, materiales de apoyo y práctica guiada.</p>
+            </div>
+        </details>
+
+        <details class="faq-item">
+            <summary>11. 🌟 ¿Qué hace diferente a este curso?</summary>
+            <div class="faq-content">
+                <p>En Academia MandarinGoo, el curso:</p>
+                <ul style="padding-left: 20px; margin-top: 10px;">
+                    <li>Está diseñado por un profesor nativo de chino mandarín.</li>
+                    <li>Está pensado especialmente para hispanohablantes.</li>
+                    <li>Incluye videos, materiales de apoyo y tips prácticos.</li>
+                    <li>Te permite aprender a tu propio ritmo y sin presión.</li>
+                </ul>
+            </div>
+        </details>
+
+    </div>
+</details>
     </div>
 </section>
 
