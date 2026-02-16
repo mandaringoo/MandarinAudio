@@ -1431,7 +1431,7 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
         <div id="pinyin_chart">
         <h2 id="chart_title">Tabla de Pinyin Mandarín con Audio</h2>
         <h2 id="chart_title2">Selecciona una sílaba para escuchar el audio y practicar con la grabación.
-        <a id="chart_title2" href="https://studycli.org/wp-content/uploads/2021/06/printable-chinese-pinyin-chart.pdf" style="color: #0645ad; text-decoration: none;"> Presionar aquí<a> para ver el PDF del cuadro</h2>
+        <a id="chart_title2" href="https://jpageprojects.github.io/MandarinAudio/pinyin_chart.pdf" style="color: #0645ad; text-decoration: none;"> Presionar aquí<a> para ver el PDF del cuadro</h2>
         <div id="chart_controls">
             <label>Al hacer clic:
                 <select class="click_rule" id="clickRule">
@@ -1812,8 +1812,8 @@ What We Offer -->
 </section>
 
 
-<section id="video-section">
-    <div style="width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); padding-bottom: 10px;">
+<section id="mission-video-section">
+    <div style="width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
         <video 
             id="mission-video"
             width="100%" 
@@ -1822,46 +1822,13 @@ What We Offer -->
             playsinline
             preload="metadata"
             style="display: block; width: 100%;">
-            <source src="https://jpageprojects.github.io/MandarinAudio/mision3.mp4" type="video/mp4">
+            <source src="https://jpageprojects.github.io/MandarinAudio/mision4.mp4" type="video/mp4">
             Tu navegador no soporta la reproducción de videos.
         </video>
     </div>
 </section>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const video = document.getElementById('mission-video');
-    const section = document.getElementById('video-section');
-    let hasPlayed = false;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !hasPlayed) {
-                video.play();
-                hasPlayed = true;
-            }
-        });
-    }, {
-        threshold: 0.5 // Se activa cuando el 50% de la sección es visible
-    });
-
-    observer.observe(section);
-
-    // Pausar el video en el primer frame cuando termine
-    video.addEventListener('ended', function() {
-        video.currentTime = 1.5;
-        video.pause();
-    });
-});
-</script>
-
-<!--
-<section>
-    <img src="3.png" alt="mision">
-</section>
-
- -->
-<section id="video-section">
+<section id="ourcurso-video-section">
     <div style="width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
         <video 
             id="ourcurso-video"
@@ -1871,7 +1838,7 @@ document.addEventListener('DOMContentLoaded', function() {
             playsinline
             preload="metadata"
             style="display: block; width: 100%;">
-            <source src="https://jpageprojects.github.io/MandarinAudio/ourcurso1.mp4" type="video/mp4">
+            <source src="https://jpageprojects.github.io/MandarinAudio/ourcurso2.mp4" type="video/mp4">
             Tu navegador no soporta la reproducción de videos.
         </video>
     </div>
@@ -1879,28 +1846,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const video = document.getElementById('ourcurso-video');
-    const section = document.getElementById('video-section');
-    let hasPlayed = false;
+    // Función para inicializar un video con auto-reproducción por scroll
+    function initAutoplayVideo(videoId, sectionId) {
+        const video = document.getElementById(videoId);
+        const section = document.getElementById(sectionId);
+        
+        if (!video || !section) return;
+        
+        let hasPlayed = false;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !hasPlayed) {
-                video.play();
-                hasPlayed = true;
-            }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasPlayed) {
+                    video.play().catch(error => {
+                        console.log('Error al reproducir el video:', error);
+                    });
+                    hasPlayed = true;
+                }
+            });
+        }, {
+            threshold: 0.5
         });
-    }, {
-        threshold: 0.5 // Se activa cuando el 50% de la sección es visible
-    });
 
-    observer.observe(section);
+        observer.observe(section);
 
-    // Pausar el video en el primer frame cuando termine
-    video.addEventListener('ended', function() {
-        video.currentTime = 1.5;
-        video.pause();
-    });
+        video.addEventListener('ended', function() {
+            video.currentTime = 1.5;
+            video.pause();
+        });
+    }
+
+    // Inicializar ambos videos
+    initAutoplayVideo('mission-video', 'mission-video-section');
+    initAutoplayVideo('ourcurso-video', 'ourcurso-video-section');
 });
 </script>
     <!-- Contact  -->
