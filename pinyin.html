@@ -1893,7 +1893,49 @@ header {
         </div>
 
         
+<div style="display: flex; justify-content: center; align-items: center; background-color: #fdfdfd;border-radius: 10px;border-left: 5px solid #2e79ce;">
+    <video 
+        id="maumau-video"
+        width="100%" 
+        height="auto" 
+        muted 
+        playsinline
+        preload="metadata"
+        style="display: block; width: 50%;">
+        <source src="https://jpageprojects.github.io/MandarinAudio/maumau.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+    </video>
+</div>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('maumau-video');
+    
+    if (!video) return;
+    
+    let hasPlayed = false;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasPlayed) {
+                video.play().catch(error => {
+                    console.log('Error al reproducir el video:', error);
+                });
+                hasPlayed = true;
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    observer.observe(video);
+
+    video.addEventListener('ended', function() {
+        video.currentTime = 1;
+        video.pause();
+    });
+});
+</script>
         <div class="info-card">
             <h3>¿Cuál es el objetivo de la tabla de pinyin?</h3>
             <p>El objetivo principal de la tabla de pinyin es:</p>
