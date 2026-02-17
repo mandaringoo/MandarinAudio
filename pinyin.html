@@ -22,7 +22,7 @@
         #pinyin_chart {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 5px;
         }
 
         #chart_title {
@@ -32,7 +32,7 @@
 font-family: 'Montserrat', sans-serif;
 letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
             text-align: center;
-            margin: 20px 0 10px;
+            margin: 0px 0 10px;
             color: #000;
         }
         #chart_title2 {
@@ -218,26 +218,35 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
             padding: 0 20px;
         }
 
-        /* Header */
-        header {
-            background: #fff;
-            padding: 0px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    /* Header */
+header {
+    background: #fff;
+    padding: 0px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px; /* Espacio reducido entre elementos */
+}
 
-        .logo img {
-            height: 110px;
-            color: transparent;
-        }
+.logo {
+    margin-right: -20px; /* Acerca el logo al título */
+}
+
+.logo img {
+    height: 120px;
+    color: transparent;
+}
+
+.titulo-header {
+    margin-left: -10px; /* Acerca el título al logo */
+}
         /* Media query para el logo */
 @media (max-width: 992px) {
     .logo img {
@@ -275,7 +284,7 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
 
         nav a {
             text-decoration: none;
-            color: #5a5a5a;
+            color: #33659e;
             font-weight: 700;
             text-transform: uppercase;
             font-size: 14px;
@@ -776,7 +785,7 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
 
         /* Pinyin Section */
         .pinyin-section {
-            padding: 40px 0;
+            padding: 10px 0;
             background: white;
         }
 
@@ -829,8 +838,8 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            margin-top: 50px;
-            padding: 60px;
+            margin-top: 0px;
+            padding: 25px;
         }
 
         .info-card {
@@ -1113,6 +1122,28 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
 .social-nav a:hover i {
     transform: scale(1.1); /* Efecto de agrandado al pasar el mouse */
 }
+
+/* Asegurar que todos los iconos tengan el mismo estilo */
+.social-nav-header ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-nav-header {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.social-nav-header i {
+    font-size: 24px; /* Tamaño del logo */
+    transition: transform 0.3s ease;
+}
+
+.social-nav-header a:hover i {
+    transform: scale(1.1); /* Efecto de agrandado al pasar el mouse */
+}
 /* Desactiva los eventos de clic y el puntero en la fila de las finales */
 .tablepress tbody tr.row-2 td {
     pointer-events: none; /* Esta línea impide que el clic llegue al script */
@@ -1246,6 +1277,18 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
     position: sticky;
     top: 0;
     z-index: 1000;
+    position: relative;
+}
+
+/* Línea superior con gradiente */
+.main-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #d2d1ff  0%, #2e79ce 100%);
 }
 
 .nav-container {
@@ -1271,11 +1314,32 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 500;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 10px 0;
 }
 
+/* Efecto hover azul metálico con animación */
 .nav-links a:hover {
-    color: #a6a6a6;
+    color: #2e79ce;
+    transform: translateY(-2px);
+}
+
+/* Línea animada debajo del texto al hacer hover */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #2e79ce, #5a9bd5);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: translateX(-50%) scaleX(1);
 }
 
 /* Esconder elementos de móvil en PC */
@@ -1325,6 +1389,52 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
     #menu-check:checked ~ .menu-icon span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     #menu-check:checked ~ .menu-icon span:nth-child(2) { opacity: 0; }
     #menu-check:checked ~ .menu-icon span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+/* Botón sobre el video */
+.video-info-btn {
+    position: absolute;
+    top: 83%; /* Controla la posición vertical (50% = centro) */
+    left: 50%; /* Controla la posición horizontal (50% = centro) */
+    transform: translate(-50%, -50%); /* Centra el botón perfectamente */
+    
+    background: linear-gradient(135deg, #2e79ce, #5a9bd5);
+    color: white;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(46, 121, 206, 0.4);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.video-info-btn:hover {
+    background: linear-gradient(135deg, #5a9bd5, #2e79ce);
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(46, 121, 206, 0.6);
+}
+
+.video-info-btn:active {
+    transform: translate(-50%, -50%) scale(0.98);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .video-info-btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-info-btn {
+        padding: 10px 25px;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
 }
     </style>
 </head>
@@ -1428,6 +1538,9 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
 -->
     <!-- Pinyin Section -->
     <section class="pinyin-section">
+        <div class="titulo-header">
+                    <h1>ACADEMIA MANDARIN GOO</h1> 
+                </div>
         <div id="pinyin_chart">
         <h2 id="chart_title">Tabla de Pinyin Mandarín con Audio</h2>
         <h2 id="chart_title2">Selecciona una sílaba para escuchar el audio y practicar con la grabación.
@@ -1530,39 +1643,34 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
 </tbody>
 </table>
         </div>
-        <div class="social-icons-contact" style="display: flex; justify-content: center !important;">
-    <a href="https://www.instagram.com/academiamandaringoo" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       aria-label="Instagram"
-       class="instagram">
-        <i class="fa-brands fa-instagram"></i>
-    </a>
-
-    <a href="https://www.facebook.com/profile.php?id=61582972204214" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       aria-label="Facebook"
-       class="facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-    </a>
-
-    <a href="https://wa.me/50766821821" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       aria-label="WhatsApp"
-       class="whatsapp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <a href="https://www.tiktok.com/@mandaringoo888" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       aria-label="TikTok"
-       class="tiktok">
-        <i class="fa-brands fa-tiktok"></i>
-    </a>
-</div>
+        <div style="padding-top: 10px; display: flex; flex-direction: column;     align-items: center;">
+            <h5>🌐 Redes Sociales</h5>
+                <p style=" width: 70%;">Síguenos en nuestras redes sociales y contáctanos para acceder a más contenido de chino mandarín y conocer todos los detalles de nuestros cursos online. En Academia MandarinGoo estamos listos para acompañarte en tu camino hacia el dominio del idioma.</p>
+        </div>
+<nav class="social-nav-header">
+    <ul>
+        <li>
+            <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
     </div>
 
     <div id="snd_player">
@@ -1813,7 +1921,7 @@ What We Offer -->
 
 
 <section id="mission-video-section">
-    <div style="width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    <div style="width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 0px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
         <video 
             id="mission-video"
             width="100%" 
@@ -1828,8 +1936,8 @@ What We Offer -->
     </div>
 </section>
 
-<section id="ourcurso-video-section">
-    <div style="width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+<section id="ourcurso-video-section" style="position: relative;">
+    <div style="width: 100%; max-width: 1000px; margin: 0 auto; overflow: hidden; border-radius: 0px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
         <video 
             id="ourcurso-video"
             width="100%" 
@@ -1842,6 +1950,9 @@ What We Offer -->
             Tu navegador no soporta la reproducción de videos.
         </video>
     </div>
+    
+    <!-- Botón sobre el video -->
+    <a href="#contact" class="video-info-btn">Para más información</a>
 </section>
 
 <script>
@@ -1889,26 +2000,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h5>🌐 Redes Sociales</h5>
                 <p>Síguenos en nuestras redes sociales y contáctanos para acceder a más contenido de chino mandarín y conocer todos los detalles de nuestros cursos online. En Academia MandarinGoo estamos listos para acompañarte en tu camino hacia el dominio del idioma.</p>
             </div>
-            <div class="social-icons" style="justify-content: flex-start; margin-top: 20px; display: flex; gap: 15px;">
-    <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram" 
-       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #E4405F; color: white; text-decoration: none; font-size: 20px;">
-        <i class="fa-brands fa-instagram"></i>
-    </a>
-
-    <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook" 
-       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #1877F2; color: white; text-decoration: none; font-size: 20px;">
-        <i class="fa-brands fa-facebook-f"></i>
-    </a>
-
-    <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" 
-       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #25D366; color: white; text-decoration: none; font-size: 22px;">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok" 
-       style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #000000; color: white; text-decoration: none; font-size: 18px;">
-        <i class="fa-brands fa-tiktok"></i>
-    </a>
+            <div  style="justify-content: flex-start; margin-top: 20px; display: flex; gap: 15px;">
+    <nav class="social-nav">
+                        <ul>
+                            <li>
+                                <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
 </div>
 </div>
     <details class="main-faq-container">
