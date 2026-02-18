@@ -116,13 +116,11 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
         .tablepress tbody td:empty {
             border-top: none;
             border-bottom: none;
-            cursor: default;
         }
 
-        .tablepress tbody td:hover:not(:empty):not(:first-child) {
-            background-color: #e8f4ff;
-        }
-
+       .tablepress tbody td:hover:not(:first-child) {
+    background-color: #1877F2 !important;
+}
         .tablepress tbody td:first-child:hover {
             background-color: #f0f0f0;
         }
@@ -146,8 +144,9 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
         }
 
         tr.highlight td:first-child {
-            background-color: #bbd9f7;
+            background-color: #4d88c4;
         }
+ 
 
         td.current-cell {
             background-color: #1877F2 !important;
@@ -1896,8 +1895,8 @@ header {
         const pinyinTable = document.getElementById('tablepress-148');
         
         pinyinTable.addEventListener('mouseover', function(e) {
-            const cell = e.target.closest('td');
-            if (cell && cell.textContent.trim()) {
+    const cell = e.target.closest('td');
+    if (cell) { 
                 const row = cell.parentElement;
                 const cellIndex = Array.from(row.children).indexOf(cell);
                 
