@@ -1291,7 +1291,7 @@ header {
         from { opacity: 0; transform: translateY(-10px); }
         to { opacity: 1; transform: translateY(0); }
     }
-/* --- Estilos Navegación --- */
+/* --- Navegación Principal (SIEMPRE visible en PC) --- */
 .main-nav {
     background: #ffffff;
     border-bottom: 1px solid #eeeeee;
@@ -1302,7 +1302,6 @@ header {
     position: relative;
 }
 
-/* Línea superior con gradiente */
 .main-nav::before {
     content: '';
     position: absolute;
@@ -1311,26 +1310,25 @@ header {
     right: 0;
     height: 3px;
     background-color: #96c7ff;
-    /* background: linear-gradient(135deg, #d2d1ff  0%, #2e79ce 100%); */
 }
 
 .nav-container {
     max-width: 1100px;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-end; /* Empuja todo a la derecha */
+    justify-content: flex-end;
     align-items: center;
     padding: 0 40px;
 }
 
-.nav-links {
+.main-nav .nav-links {
     list-style: none;
     display: flex;
     gap: 50px;
     margin: 0;
 }
 
-.nav-links a {
+.main-nav .nav-links a {
     text-decoration: none;
     color: #666;
     font-size: 13px;
@@ -1342,14 +1340,12 @@ header {
     padding: 10px 0;
 }
 
-/* Efecto hover azul metálico con animación */
-.nav-links a:hover {
+.main-nav .nav-links a:hover {
     color: #2e79ce;
     transform: translateY(-2px);
 }
 
-/* Línea animada debajo del texto al hacer hover */
-.nav-links a::after {
+.main-nav .nav-links a::after {
     content: '';
     position: absolute;
     bottom: 5px;
@@ -1361,23 +1357,70 @@ header {
     transition: transform 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.main-nav .nav-links a:hover::after {
     transform: translateX(-50%) scaleX(1);
 }
 
-/* Esconder elementos de móvil en PC */
-#menu-check, .menu-icon { display: none; }
+/* --- Menú Hamburguesa (OCULTO en PC) --- */
+.mobile-menu-wrapper {
+    display: none; /* Oculto por defecto */
+}
 
-/* --- Responsive: Menú Lateral --- */
+#menu-check {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.nav-links-mobile {
+    display: none;
+}
+
+/* --- Responsive: Ocultar main-nav y mostrar hamburguesa en móvil --- */
 @media (max-width: 768px) {
-    .nav-container {
-        justify-content: flex-end; /* Icono a la derecha */
+    /* Ocultar la navegación principal */
+    .main-nav {
+        display: none;
+    }
+
+/* --- Menú Hamburguesa (OCULTO en PC) --- */
+.mobile-menu-wrapper {
+    display: none; /* Oculto por defecto */
+    position: relative;
+}
+
+#menu-check {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.nav-links-mobile {
+    display: none;
+}
+
+/* --- Responsive: Ocultar main-nav y mostrar hamburguesa en móvil --- */
+@media (max-width: 768px) {
+    /* Ocultar la navegación principal */
+    .main-nav {
+        display: none;
+    }
+
+    /* Mostrar menú hamburguesa */
+    .mobile-menu-wrapper {
+        display: block;
     }
 
     .menu-icon {
         display: block;
         cursor: pointer;
-        z-index: 1001;
+        z-index: 1002; /* MÁS ALTO que el menú */
+        margin-left: 15px;
+        position: relative; /* Importante para que el z-index funcione */
     }
 
     .menu-icon span {
@@ -1389,7 +1432,8 @@ header {
         transition: 0.4s;
     }
 
-    .nav-links {
+    .nav-links-mobile {
+        display: flex;
         position: fixed;
         right: -100%;
         top: 0;
@@ -1402,16 +1446,55 @@ header {
         gap: 40px;
         transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+        list-style: none;
+        z-index: 1001; /* MENOS que el icono */
+        padding: 0;
+        margin: 0;
     }
 
-    #menu-check:checked ~ .nav-links {
+    .nav-links-mobile a {
+        text-decoration: none;
+        color: #666;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links-mobile a:hover {
+        color: #2e79ce;
+    }
+
+    #menu-check:checked ~ .nav-links-mobile {
         right: 0;
     }
 
-    /* Animación X */
-    #menu-check:checked ~ .menu-icon span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    #menu-check:checked ~ .menu-icon span:nth-child(2) { opacity: 0; }
-    #menu-check:checked ~ .menu-icon span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    /* Animación X - CAMBIAR COLOR cuando está abierto */
+    #menu-check:checked ~ .menu-icon span {
+        background: #3d3d3d; /* Asegurar que se vea */
+    }
+
+    #menu-check:checked ~ .menu-icon span:nth-child(1) { 
+        transform: translateY(8px) rotate(45deg); 
+    }
+    #menu-check:checked ~ .menu-icon span:nth-child(2) { 
+        opacity: 0; 
+    }
+    #menu-check:checked ~ .menu-icon span:nth-child(3) { 
+        transform: translateY(-8px) rotate(-45deg); 
+    }
+
+    /* Opcional: Agregar fondo oscuro detrás del menú */
+    #menu-check:checked ~ .nav-links-mobile::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+    }
 }
 /* Botón sobre el video */
 .video-info-btn {
@@ -1475,49 +1558,54 @@ header {
                     <h1>Academia MandarinGoo</h1> 
                     <h2>TABLA DE PINYIN INTERACTIVO</h2>
                 </div>
-                    <nav class="social-nav">
-                        <ul>
-                            <li>
-                                <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                                    <i class="fa-brands fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                                    <i class="fa-brands fa-whatsapp"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                                    <i class="fa-brands fa-tiktok"></i>
-                                </a>
-                            </li>
-                            <li class="contact-icon-mobile">
-                                <a href="#contact" aria-label="Contact Us">
-                                    <i class="fa-regular fa-comment-dots"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-            <a href="#contact" class="btn-contact">
-                <span class="btn-text">Contáctanos</span>
+<nav class="social-nav">
+    <ul>
+        <li>
+            <a href="https://www.instagram.com/academiamandaringoo" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
             </a>
+        </li>
+        <li>
+            <a href="https://www.facebook.com/profile.php?id=61582972204214" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://wa.me/50766821821" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.tiktok.com/@mandaringoo888" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Menú hamburguesa SOLO para móvil -->
+<div class="mobile-menu-wrapper">
+    <input type="checkbox" id="menu-check">
+    <label for="menu-check" class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <ul class="nav-links-mobile">
+        <li><a href="#curso">Nuestro Curso</a></li>
+        <li><a href="#nosotros">Sobre Nosotros</a></li>
+        <li><a href="#contacto">Contáctanos</a></li>
+    </ul>
+</div>
+
+<a href="#contact" class="btn-contact">
+    <span class="btn-text">Contáctanos</span>
+</a>
         </div>
     </div>
     <nav class="main-nav">
     <div class="nav-container">
-        <input type="checkbox" id="menu-check">
-        
-        <label for="menu-check" class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
+       
 
         <ul class="nav-links">
             <li><a href="#curso">Nuestro Curso</a></li>
