@@ -6,17 +6,22 @@
     <title>Language School - About Us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        :root {
+            --color-bg: #dfeeff
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        
+
         body {
             font-family: Arial, sans-serif;
             padding: 0;
             margin: 0;
-            background-color: #fff;
+            background-color: var(--color-bg);
         }
 
         #pinyin_chart {
@@ -46,7 +51,7 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
         #chart_controls {
             padding: 10px;
             text-align: center;
-            background: white;
+            background: var(--color-bg);
             margin-bottom: 0;
         }
 
@@ -303,7 +308,7 @@ header {
     background: linear-gradient(135deg, #2e79ce, #5a9bd5);
     color: white;
     padding: 15px 40px;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
@@ -736,8 +741,8 @@ header {
         /* Contenedor principal */
         .testimonials {
             padding: 80px 20px;
-            background: #74c1f5;
-            color: white;
+            background: var(--color-bg);
+            color: rgb(0, 0, 0);
                 margin-bottom: 10px;
         }
 
@@ -805,7 +810,7 @@ header {
         /* Pinyin Section */
         .pinyin-section {
             padding: 10px 0;
-            background: white;
+            background: var(--color-bg);
         }
 
         .pinyin-chart-wrapper {
@@ -894,7 +899,7 @@ header {
         }
 
         .contact-info {
-            background: white;
+            background: var(--color-bg);
             padding: 60px;
         }
 
@@ -1180,7 +1185,7 @@ header {
 }
 
 .titulo-header h1 {
-    font-size: 28px;
+    font-size: 34px;
     font-weight: 700;
     background: linear-gradient(135deg, #3d3d3d 0%, #2e79ce 100%);
     -webkit-background-clip: text;
@@ -1199,7 +1204,7 @@ header {
 .titulo-header h2 {
     font-size: 15px;
     font-weight: 500;
-    color: #666;
+    color: #1c4c82;
     margin: 0;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -1402,6 +1407,7 @@ header {
 .nav-links-mobile {
     display: none;
 }
+}
 
 /* --- Responsive: Ocultar main-nav y mostrar hamburguesa en móvil --- */
 @media (max-width: 768px) {
@@ -1505,8 +1511,8 @@ header {
     
     background: linear-gradient(135deg, #2e79ce, #5a9bd5);
     color: white;
-    padding: 15px 40px;
-    font-size: 16px;
+    padding: 7px 15px;
+    font-size: 13px;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
@@ -1963,7 +1969,7 @@ header {
         </div>
     </section>
 
-    <section>
+    <section style="background: var(--color-bg);">
     <!-- Additional Information -->
     <div class="pinyin-info">
         <div class="info-card">
@@ -2183,12 +2189,30 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
     <details class="main-faq-container">
-    <summary class="main-faq-summary">
-        <div class="summary-header">
-            <span class="main-title">❓ Preguntas Frecuentes</span>
-            <span class="tap-indicator">Tocar para ver todas las preguntas</span>
+<summary class="main-faq-summary" style="list-style: none; cursor: pointer;">
+    <div class="summary-header" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+        
+        <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+            <div class="logo">
+                <img src="https://jpageprojects.github.io/MandarinAudio/logoPinyin.png" 
+                     alt="Logo de Mandarin Pinyin" 
+                     style="height: 50px; width: auto; display: block;">
+            </div> 
+            <span class="main-title" style="font-size: 1.5rem; font-weight: bold;">❓ Preguntas Frecuentes</span>
         </div>
-    </summary>
+
+        <span class="tap-indicator" style="font-size: 0.9em; opacity: 0.7; text-align: center;">
+            Tocar para ver todas las preguntas
+        </span>
+        
+    </div>
+</summary>
+
+<style>
+    /* Quita la flecha negra del navegador */
+    .main-faq-summary::-webkit-details-marker { display: none; }
+    .main-faq-summary { list-style: none; }
+</style>
 
     <div class="FQ-wrapper">
         
@@ -2301,8 +2325,8 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="#" style="color: #007bff; text-decoration: none; margin: 0 15px; font-size: 14px;">Tabla Pinyin</a>
       <a href="#" style="color: #007bff; text-decoration: none; margin: 0 15px; font-size: 14px;">Contacto</a>
     </div>
-    <p style="margin: 15px 0 0 0; color: #999; font-size: 13px;">
-      Hecho con ❤️ para estudiantes de chino
+    <p style="margin: 15px 0 0 0; color: #333; font-size: 16px;">
+      Hecho con ❤️ para estudiantes de chino mandarin
     </p>
   </div>
 </footer>
