@@ -1064,7 +1064,91 @@ header {
             opacity: 1;
             border-bottom-color: #2e79ce;
         }
+.footer-legal {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem; /* Pequeño y sutil */
+    color: #666;
+    border-top: 1px solid #ddd;
+}
 
+.footer-legal a {
+    color: #1877F2; /* Usando tu color de la celda */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+/* Overlay con desenfoque */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+}
+
+/* La tarjeta del modal */
+.modal-card {
+    background-color: #fff;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    animation: modalPop 0.3s ease-out;
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px; top: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.terms-body {
+    padding: 25px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background: #fdfdfd;
+}
+
+#closeTermsBtn {
+    background-color: #1877F2;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+}
+
+#closeTermsBtn:hover { background-color: #1565d4; }
         /* Responsive */
         @media (max-width: 992px) {
             .stats,
@@ -2009,6 +2093,33 @@ pinyinTable.addEventListener('mouseout', function(e) {
         sndPlayer.addEventListener('click', function(e) {
             e.stopPropagation();
         });
+        document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("termsModal");
+    const openBtn = document.getElementById("openTerms");
+    const closeX = document.querySelector(".close-btn");
+    const closeBtn = document.getElementById("closeTermsBtn");
+
+    // Verificar si el botón existe en la consola (para debugear)
+    if (!openBtn) console.error("No se encontró el botón con ID: openTerms");
+
+    openBtn.onclick = function(e) {
+        e.preventDefault(); // Evita cualquier comportamiento por defecto
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    };
+
+    const closeModal = () => {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    };
+
+    if (closeX) closeX.onclick = closeModal;
+    if (closeBtn) closeBtn.onclick = closeModal;
+
+    window.onclick = (event) => {
+        if (event.target == modal) closeModal();
+    };
+});
     </script>
             </div>
 
@@ -2200,6 +2311,14 @@ document.addEventListener('DOMContentLoaded', function() {
     initAutoplayVideo('mission-video', 'mission-video-section');
     initAutoplayVideo('ourcurso-video', 'ourcurso-video-section');
 });
+// Opcional: Evitar click derecho dentro del cuerpo del modal 
+// para reforzar el mensaje de "No reproducción"
+const termsBody = document.querySelector('.terms-body');
+termsBody.oncontextmenu = function(e) {
+    e.preventDefault();
+    alert("Contenido protegido por Academia MandarinGoo.");
+}
+
 </script>
     <!-- Contact  -->
   <section class="contact" id="contact">
@@ -2360,22 +2479,59 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </section>
 
-<footer style="background-color: #f8f9fa; padding: 40px 20px; text-align: center; border-top: 1px solid #e0e0e0; margin-top: 60px;">
+<footer style="background-color: #f8f9fa; padding: 40px 20px; text-align: center; border-top: 1px solid #e0e0e0; margin-top: 60px; font-family: sans-serif;">
   <div style="max-width: 1200px; margin: 0 auto;">
-    <p style="margin: 0 0 15px 0; color: #333; font-size: 16px; font-weight: 600;">
+    <p style="margin: 0 0 5px 0; color: #333; font-size: 18px; font-weight: 700;">
       Gráfico Pinyin Interactivo
     </p>
     <p style="margin: 0 0 20px 0; color: #666; font-size: 14px;">
       Tu herramienta completa para dominar la pronunciación del chino mandarín
     </p>
+    
     <div style="margin: 20px 0;">
-      <a href="#" style="color: #007bff; text-decoration: none; margin: 0 15px; font-size: 14px;">Inicio</a>
-      <a href="#chart_title" style="color: #007bff; text-decoration: none; margin: 0 15px; font-size: 14px;">Tabla Pinyin</a>
-      <a href="#contact" style="color: #007bff; text-decoration: none; margin: 0 15px; font-size: 14px;">Contacto</a>
+      <a href="#" style="color: #1877F2; text-decoration: none; margin: 0 15px; font-size: 14px; font-weight: 500;">Inicio</a>
+      <a href="#chart_title" style="color: #1877F2; text-decoration: none; margin: 0 15px; font-size: 14px; font-weight: 500;">Tabla Pinyin</a>
+      <a href="#contact" style="color: #1877F2; text-decoration: none; margin: 0 15px; font-size: 14px; font-weight: 500;">Contacto</a>
     </div>
-    <p style="margin: 15px 0 0 0; color: #333; font-size: 16px;">
-      Hecho con ❤️ para estudiantes de chino mandarin
+<p style="margin: 20px 0 18px 0; color: #555; font-size: 14px;">
+      Hecho con ❤️ para estudiantes de chino mandarín
     </p>
+
+    <div class="footer-legal" style="font-size: 13px; color: #888;">
+        <p style="margin-bottom: 5px;">&copy; 2026 <strong>Academia MandarinGoo</strong>. Todos los derechos reservados.</p><br>
+        <p>Este contenido es para uso exclusivo en línea dentro de este sitio web y está protegido legalmente por derechos de autor. No está permitida la reproducción, extracción, distribución ni el uso comercial, total o parcial, sin autorización previa.</p>
+        <!--<button id="openTerms" style="background: none; border: none; color: #1877F2; cursor: pointer; font-size: 13px; text-decoration: underline; padding: 5px;">
+            Términos, Condiciones y Políticas
+        </button> -->
+    </div>
+    
+    
+  </div>
+
+  <div id="termsModal" class="modal-overlay">
+    <div class="modal-card">
+        <div class="modal-header">
+            <span class="close-btn">&times;</span>
+            <h2 style="margin: 0; font-size: 1.4rem; color: #333;">Aviso Legal</h2>
+        </div>
+        <div class="terms-body">
+            <p style="color: #1877F2; font-weight: 700; margin-bottom: 15px;">© Academia MandarinGoo</p>
+            
+            <div style="background-color: #f0f7ff; padding: 20px; border-left: 5px solid #1877F2; text-align: left; border-radius: 4px;">
+                <p style="margin: 0; line-height: 1.6; color: #333; font-size: 14px;">
+                    Este contenido es para uso exclusivo en línea dentro de este sitio web y está protegido legalmente por derechos de autor. 
+                    <strong>No está permitida la reproducción, extracción, distribución ni el uso comercial</strong>, total o parcial, sin autorización previa.
+                </p>
+            </div>
+
+            <p style="margin-top: 20px; font-size: 13px; color: #666; line-height: 1.5; text-align: left;">
+                Al acceder a este sitio, usted acepta que el material didáctico, logos y textos son propiedad intelectual de la Academia. Cualquier infracción será tratada bajo las leyes de propiedad intelectual vigentes.
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button id="closeTermsBtn">He leído y acepto</button>
+        </div>
+    </div>
   </div>
 </footer>
 </body>
