@@ -146,7 +146,16 @@ letter-spacing: 1px; /* Espaciado extra para mayor sofisticación */
         tr.highlight td:first-child {
             background-color: #4d88c4;
         }
- 
+        /* Agregar después de las reglas existentes de highlight */
+td.column-highlight,
+th.column-highlight {
+    background-color: #e3effd !important;
+}
+
+/* Mantener el color especial para la celda actual */
+td.current-cell {
+    background-color: #1877F2 !important;
+}
 
         td.current-cell {
             background-color: #1877F2 !important;
@@ -1890,9 +1899,48 @@ header {
                 };
             });
         }
-
         // Agregar hover effects
-        const pinyinTable = document.getElementById('tablepress-148');
+const pinyinTable = document.getElementById('tablepress-148');
+
+pinyinTable.addEventListener('mouseover', function(e) {
+    const cell = e.target.closest('td, th');
+    if (cell) { 
+        const row = cell.parentElement;
+        const cellIndex = Array.from(row.children).indexOf(cell);
+        
+        // Resaltar fila
+        row.classList.add('highlight');
+        
+        // Resaltar columna (todas las filas)
+        const rows = pinyinTable.querySelectorAll('tr');
+        rows.forEach(r => {
+            const cells = r.querySelectorAll('th, td');
+            if (cells[cellIndex]) {
+                cells[cellIndex].classList.add('column-highlight');
+            }
+        });
+        
+        // Agregar clase especial a la celda actual
+        cell.classList.add('current-cell');
+    }
+});
+
+pinyinTable.addEventListener('mouseout', function(e) {
+    const cell = e.target.closest('td, th');
+    if (cell) {
+        // Limpiar todos los resaltados
+        pinyinTable.querySelectorAll('.highlight').forEach(el => {
+            el.classList.remove('highlight');
+        });
+        pinyinTable.querySelectorAll('.column-highlight').forEach(el => {
+            el.classList.remove('column-highlight');
+        });
+        pinyinTable.querySelectorAll('.current-cell').forEach(el => {
+            el.classList.remove('current-cell');
+        });
+    }
+});
+
         
         pinyinTable.addEventListener('mouseover', function(e) {
     const cell = e.target.closest('td');
