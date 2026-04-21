@@ -2319,6 +2319,8 @@ termsBody.oncontextmenu = function(e) {
     alert("Contenido protegido por Academia MandarinGoo.");
 }
 
+document.getElementById("current-year").textContent = new Date().getFullYear();
+
 </script>
     <!-- Contact  -->
   <section class="contact" id="contact">
@@ -2498,7 +2500,9 @@ termsBody.oncontextmenu = function(e) {
     </p>
 
     <div class="footer-legal" style="font-size: 13px; color: #888;">
-        <p style="margin-bottom: 5px;">&copy; 2026 <strong>Academia MandarinGoo</strong>. Todos los derechos reservados.</p><br>
+       <p style="margin-bottom: 5px;">
+            &copy; <span id="current-year"></span> <strong>Academia MandarinGoo</strong>. Todos los derechos reservados.
+       </p>
         <p>Este contenido es para uso exclusivo en línea dentro de este sitio web y está protegido legalmente por derechos de autor. No está permitida la reproducción, extracción, distribución ni el uso comercial, total o parcial, sin autorización previa.</p>
         <!--<button id="openTerms" style="background: none; border: none; color: #1877F2; cursor: pointer; font-size: 13px; text-decoration: underline; padding: 5px;">
             Términos, Condiciones y Políticas
