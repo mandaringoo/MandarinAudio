@@ -2499,20 +2499,22 @@ document.getElementById("current-year").textContent = new Date().getFullYear();
       Hecho con ❤️ para estudiantes de chino mandarín
     </p>
 
-   <div class="footer-legal" style="font-size: 13px; color: #888;">
-    <p style="margin-bottom: 5px;">
-        &copy; <span id="current-year"></span> <strong>Academia MandarinGoo</strong>. Todos los derechos reservados.
-    </p>
+<div class="footer-legal" style="font-size: 13px; color: #888; line-height: 1.5;">
+    <!-- Línea Principal: Copyright y Enlace juntos -->
     <p style="margin-bottom: 10px;">
-        Este contenido es para uso exclusivo en línea dentro de este sitio web y está protegido legalmente por derechos de autor. No está permitida la reproducción, extracción, distribución ni el uso comercial, total o parcial, sin autorización previa.
+        &copy; <span id="current-year"></span> <strong>Academia MandarinGoo</strong>. Todos los derechos reservados. 
+        <span style="color: #ccc; margin: 0 8px;">|</span>
+        <a href="https://sites.google.com/view/academiamandaringoolegal/inicio?authuser=2" 
+           target="_blank" 
+           style="color: #1877F2; text-decoration: underline; font-weight: 500;">
+            Términos, Condiciones y Políticas
+        </a>
     </p>
     
-    <!-- Botón que redirige a los Términos y Condiciones -->
-    <a href="https://sites.google.com/view/academiamandaringoolegal/inicio?authuser=2" 
-       target="_blank" 
-       style="display: inline-block; background: none; border: none; color: #1877F2; cursor: pointer; font-size: 13px; text-decoration: underline; padding: 5px 0; font-family: inherit;">
-        Términos, Condiciones y Políticas
-    </a>
+    <!-- Texto secundario: Advertencia legal con menos peso visual -->
+    <p style="font-size: 11px; color: #aaa; margin: 0;">
+        Este contenido es para uso exclusivo en línea dentro de este sitio web y está protegido legalmente por derechos de autor. No está permitida la reproducción, extracción, distribución ni el uso comercial, total o parcial, sin autorización previa.
+    </p>
 </div>
     
     
