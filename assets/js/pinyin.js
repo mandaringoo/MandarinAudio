@@ -5,7 +5,7 @@
 
 
 /* ─── 1. CONSTANTES ─── */
-const AUDIO_BASE_PATH = 'https://mandaringoo.github.io/MandarinAudio/audios1/';
+const AUDIO_BASE_PATH = 'assets/media/audio/';
 
 const TONE_MARKS = {
     'a': ['ā', 'á', 'ǎ', 'à'],
